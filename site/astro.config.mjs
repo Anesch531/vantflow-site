@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 // VANTFLOW - static site for GitHub Pages.
-// Decisions: #35 (Astro static), #37 (GitHub Pages via git push), #38 (keep .html paths).
+// Decisions: #35 (Astro static), #37 (GitHub Pages via git push), #38 amended by #42 (legal directory URLs).
 export default defineConfig({
   site: 'https://vantflow.tech',
 
@@ -10,8 +10,8 @@ export default defineConfig({
   output: 'static',
 
   build: {
-    // 'preserve' mirrors the source tree: `privacy.astro` -> /privacy.html and
-    // `terms.astro` -> /terms.html keep the two live legal URLs (decision #38), while
+    // 'preserve' mirrors the source tree: `privacy/index.astro` -> /privacy/index.html and
+    // `terms/index.astro` -> /terms/index.html implement legal directory URLs (decision #42), while
     // `about/index.astro` -> /about/index.html serves the /about/ directory URLs fixed in
     // ARCHITECTURE §4. ('file' flattened /about/ to /about.html - found and fixed in T02.)
     format: 'preserve',

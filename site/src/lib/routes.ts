@@ -6,7 +6,7 @@
  * never stored. Slugs were reconciled and frozen in T18 (decision #39; map in `seo/keyword-map.md`) —
  * downstream code must reference routes by `key`, never by a literal path.
  *
- * `/privacy.html` and `/terms.html` keep their existing live paths (decision #38).
+ * `/privacy/` and `/terms/` supersede decision #38 for these paths (decision #42).
  * `/blog/` is Phase 1b (decision #28): present in the table, disabled, no page emitted.
  */
 
@@ -55,8 +55,8 @@ export const routes = {
   pricing: r('pricing', '/pricing/', 'top', 'T09'),
   contact: r('contact', '/contact/', 'top', 'T10'),
 
-  privacy: r('privacy', '/privacy.html', 'legal', 'T11'),
-  terms: r('terms', '/terms.html', 'legal', 'T11'),
+  privacy: r('privacy', '/privacy/', 'legal', 'T11'),
+  terms: r('terms', '/terms/', 'legal', 'T11'),
 
   blog: r('blog', '/blog/', 'top', 'T12', false),
 

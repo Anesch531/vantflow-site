@@ -1,15 +1,15 @@
 ---
 import { getEntry, render } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Container from '../components/Container.astro';
-import { localizePath, type Locale } from '../lib/i18n';
-import { route, routeKeys, type RouteKey } from '../lib/routes';
-import copy from '../content/pages/en/terms.json';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/Container.astro';
+import { localizePath, type Locale } from '../../lib/i18n';
+import { route, routeKeys, type RouteKey } from '../../lib/routes';
+import copy from '../../content/pages/en/privacy.json';
 
 const locale: Locale = 'en';
-const entry = await getEntry('pages', 'en/terms');
-if (!entry) throw new Error('T11: missing content entry pages/en/terms');
-function assertContentTree(value: unknown, path = 'terms'): void {
+const entry = await getEntry('pages', 'en/privacy');
+if (!entry) throw new Error('T11: missing content entry pages/en/privacy');
+function assertContentTree(value: unknown, path = 'privacy'): void {
   if (typeof value === 'string') { if (!value.trim()) throw new Error(`T11: empty copy value at ${path}`); return; }
   if (Array.isArray(value)) { if (!value.length) throw new Error(`T11: empty copy array at ${path}`); value.forEach((x, i) => assertContentTree(x, `${path}[${i}]`)); return; }
   if (value && typeof value === 'object') { const entries = Object.entries(value); if (!entries.length) throw new Error(`T11: empty copy object at ${path}`); entries.forEach(([k, x]) => assertContentTree(x, `${path}.${k}`)); return; }
@@ -20,9 +20,9 @@ assertContentTree(copy);
 const { Content } = await render(entry);
 ---
 <BaseLayout locale={locale} title={entry.data.title} description={entry.data.description} noindex={entry.data.noindex} schemaType={entry.data.schemaType}>
-  <section class="hero" aria-labelledby="terms-title"><Container><p class="eyebrow">{copy.eyebrow}</p><h1 id="terms-title">{entry.data.title}</h1><div class="prose hero__prose lead"><Content /></div><p class="updated mono">{copy.updated}</p></Container></section>
-  <section class="section" aria-label="Terms details"><Container><div class="legal-grid">{copy.sections.map((section) => <article><h2>{section.title}</h2><p>{section.body}</p></article>)}</div></Container></section>
-  <section class="section section--tinted" aria-labelledby="terms-links-title"><Container><h2 id="terms-links-title">{copy.related.title}</h2><nav class="link-grid" aria-label={copy.related.ariaLabel}>{copy.links.map((link, index) => <a href={hrefFor(link.routeKey, `terms.links[${index}].routeKey`)}>{link.label}</a>)}</nav></Container></section>
+  <section class="hero" aria-labelledby="privacy-title"><Container><p class="eyebrow">{copy.eyebrow}</p><h1 id="privacy-title">{entry.data.title}</h1><div class="prose hero__prose lead"><Content /></div><p class="updated mono">{copy.updated}</p></Container></section>
+  <section class="section" aria-label="Privacy details"><Container><div class="legal-grid">{copy.sections.map((section) => <article><h2>{section.title}</h2><p>{section.body}</p></article>)}</div></Container></section>
+  <section class="section section--tinted" aria-labelledby="privacy-links-title"><Container><h2 id="privacy-links-title">{copy.related.title}</h2><nav class="link-grid" aria-label={copy.related.ariaLabel}>{copy.links.map((link, index) => <a href={hrefFor(link.routeKey, `privacy.links[${index}].routeKey`)}>{link.label}</a>)}</nav></Container></section>
 </BaseLayout>
 <style>
   .hero,.section { padding-block: var(--section-gap); } .hero { border-block-end: var(--hairline) solid var(--border); } .hero__prose { margin-block-start: var(--space-6); max-inline-size: var(--measure); color: var(--text-body); } .hero__prose :global(p) { margin: 0; font-size: var(--text-h3); } h1 { max-inline-size: 20ch; } .updated { margin-block-start: var(--space-6); color: var(--text-muted); } .section--tinted { background: var(--surface-1); border-block: var(--hairline) solid var(--border); } .legal-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-8); max-inline-size: var(--measure); } article { padding-block-start: var(--space-6); border-block-start: var(--hairline) solid var(--border); } article h2 { margin: 0; font-size: var(--text-h3); } article p { margin-block-start: var(--space-3); color: var(--text-body); } .link-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); margin-block-start: var(--space-8); } .link-grid a { min-block-size: var(--tap-min); padding: var(--space-4); border: var(--hairline) solid var(--border); color: var(--action); } @media (min-width: 48rem) { .legal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-inline-size: none; } .link-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
