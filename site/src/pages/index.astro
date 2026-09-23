@@ -64,6 +64,8 @@ const { Content } = await render(entry);
   title={entry.data.title}
   description={entry.data.description}
   noindex={entry.data.noindex}
+  schemaType={entry.data.schemaType}
+  headerCtaVariant="secondary"
   isHome
 >
   <section class="hero" aria-labelledby="home-title">
@@ -72,11 +74,11 @@ const { Content } = await render(entry);
         <div class="hero__copy">
           <p class="eyebrow hero__eyebrow">{homeCopy.hero.eyebrow}</p>
           <h1 id="home-title">{entry.data.title}</h1>
-          <div class="hero__prose prose">
+          <div class="hero__prose prose lead">
             <Content />
           </div>
           <div class="hero__actions" aria-label="Homepage actions">
-            <Button href={heroPrimaryHref} variant="secondary">
+            <Button href={heroPrimaryHref} variant="primary">
               {t(locale, primaryCta.labelKey)}
             </Button>
             <Button href={heroSecondaryHref} variant="link">
@@ -124,7 +126,7 @@ const { Content } = await render(entry);
 
       <article class="finding" aria-labelledby="finding-title">
         <div class="finding__meta mono">
-          <span id="finding-title">{homeCopy.method.example.label}</span>
+          <span id="finding-title" class="chip chip--warn">{homeCopy.method.example.label}</span>
           <span>{homeCopy.method.example.status}</span>
         </div>
         <dl>
@@ -265,11 +267,7 @@ const { Content } = await render(entry);
     color: var(--slate-700);
   }
 
-  .hero__prose :global(p) {
-    margin: 0;
-    font-size: var(--text-h3);
-    line-height: var(--lh-body);
-  }
+  .hero__prose :global(p) { margin: 0; }
 
   .hero__actions {
     display: flex;
@@ -373,7 +371,6 @@ const { Content } = await render(entry);
     padding: var(--space-6);
     background: var(--surface-2);
     border: var(--hairline) solid var(--border);
-    border-inline-start: var(--space-1) solid var(--warn);
     border-radius: var(--radius-sm);
   }
 

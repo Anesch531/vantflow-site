@@ -2,18 +2,30 @@
 /**
  * Cta — THE primary call to action (decision #18). Reads lib/cta.ts; never hard-codes.
  * Header, hero and end-of-page CTAs all render this component.
+ *
+ * A CTA must never link to the page it sits on. When rendered on the audit page itself,
+ * it becomes the booking action (WhatsApp) so the persistent button still converts.
  */
 import Button from './Button.astro';
 import { primaryCta } from '../lib/cta';
+import { whatsApp } from '../lib/contact';
 import { localizePath, t, type Locale } from '../lib/i18n';
 
 interface Props {
   locale: Locale;
+  variant?: 'primary' | 'secondary';
   class?: string;
 }
-const { locale, class: className = '' } = Astro.props;
+const { locale, variant = 'primary', class: className = '' } = Astro.props;
+
+const norm = (p: string) => p.replace(/\.html$/, '').replace(/\/+$/, '') || '/';
+const target = localizePath(primaryCta.route.path, locale);
+const onTarget = norm(Astro.url.pathname) === norm(target);
+
+const href = onTarget ? whatsApp.audit : target;
+const label = onTarget ? t(locale, 'cta.startWhatsApp') : t(locale, primaryCta.labelKey);
 ---
 
-<Button href={localizePath(primaryCta.route.path, locale)} variant="primary" class={className}>
-  {t(locale, primaryCta.labelKey)}
+<Button href={href} variant={variant} class={className} external={onTarget}>
+  {label}
 </Button>

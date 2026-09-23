@@ -4,7 +4,7 @@
 locale: en
 route: notFound
 title: "Page not found"
-description: ""
+description: "The requested VANTFLOW page does not exist or has moved."
 canonical: ""
 alternates: []
 schemaType: "WebPage"

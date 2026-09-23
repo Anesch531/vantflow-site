@@ -2,10 +2,10 @@
 locale: en
 route: dubaiProperty
 title: SEO for real estate in Dubai built around property discovery
-description: ''
+description: 'SEO for Dubai property firms, shaped around location, property intent, technical foundations, and useful content.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'Service'
 noindex: false
 ---
 

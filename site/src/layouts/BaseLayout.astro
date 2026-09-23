@@ -3,28 +3,89 @@
  * BaseLayout — THE shell. Header / main / footer, lang + dir from the locale helper.
  * Pages render inside it and never re-implement it (ARCHITECTURE §6 "Layout shell").
  * No <script> anywhere: the site is content-only static HTML (T01 render model).
+ *
+ * <head> contract: title, description, canonical, Open Graph, Twitter card, theme colour,
+ * font preloads and Organization / WebPage JSON-LD are all emitted here from props +
+ * lib/contact.ts. Pages pass content; they never write <head> tags themselves.
  */
 import '@fontsource-variable/inter';
 import '@fontsource-variable/jetbrains-mono';
 import '../styles/global.css';
 
+import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import monoWoff2 from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url';
+
 import { dirFor, langTag, t, type Locale } from '../lib/i18n';
+import { contact, whatsApp } from '../lib/contact';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
   locale: Locale;
-  /** <title>. Site name is appended automatically except on home. */
+  /** <title>. Site name is appended automatically. */
   title: string;
   description?: string;
   noindex?: boolean;
-  /** Set true on the home route so <title> is the bare site name. */
+  /** Home gets "VANTFLOW — <tagline>" rather than the H1 text. */
   isHome?: boolean;
+  /** JSON-LD @type for the page node. */
+  schemaType?: string;
+  /** Demote the header CTA when the page hero already carries the primary button. */
+  headerCtaVariant?: 'primary' | 'secondary';
 }
 
-const { locale, title, description = '', noindex = false, isHome = false } = Astro.props;
+const {
+  locale,
+  title,
+  description = '',
+  noindex = false,
+  isHome = false,
+  schemaType = 'WebPage',
+  headerCtaVariant = 'primary',
+} = Astro.props;
+
 const siteName = t(locale, 'site.name');
-const docTitle = isHome || title === siteName ? siteName : `${title} — ${siteName}`;
+const siteUrl = Astro.site ?? new URL('https://vantflow.tech');
+const docTitle = isHome ? `${siteName} — Evidence-led SEO for agencies` : `${title} — ${siteName}`;
+const canonical = new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = new URL('/og-default.png', siteUrl).href;
+const ogLocale = { en: 'en_GB', fr: 'fr_FR', ar: 'ar_AE' }[locale];
+
+const orgId = `${siteUrl.origin}/#organization`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': orgId,
+      name: siteName,
+      url: siteUrl.origin + '/',
+      description: t(locale, 'footer.builtFor'),
+      email: contact.email,
+      telephone: contact.phoneE164,
+      areaServed: ['DZ', 'AE', 'MA', 'TN', 'SA', 'QA', 'FR'],
+      knowsLanguage: ['en', 'fr', 'ar'],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        telephone: contact.phoneE164,
+        email: contact.email,
+        url: whatsApp.general,
+        availableLanguage: ['en', 'fr', 'ar'],
+      },
+      logo: new URL('/favicon.svg', siteUrl).href,
+    },
+    {
+      '@type': schemaType || 'WebPage',
+      '@id': canonical,
+      url: canonical,
+      name: docTitle,
+      description: description || undefined,
+      inLanguage: langTag[locale],
+      isPartOf: { '@type': 'WebSite', url: siteUrl.origin + '/', name: siteName, publisher: { '@id': orgId } },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -34,12 +95,37 @@ const docTitle = isHome || title === siteName ? siteName : `${title} — ${siteN
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{docTitle}</title>
     {description && <meta name="description" content={description} />}
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {noindex ? <meta name="robots" content="noindex, nofollow" /> : <link rel="canonical" href={canonical} />}
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:title" content={docTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${siteName} — ${t(locale, 'site.tagline')}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={docTitle} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={ogImage} />
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preload" href={interWoff2} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={monoWoff2} as="font" type="font/woff2" crossorigin />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <a class="skip-link" href="#main">{t(locale, 'nav.skip')}</a>
-    <Header locale={locale} />
+    <Header locale={locale} ctaVariant={headerCtaVariant} />
     <main id="main" tabindex="-1">
       <slot />
     </main>

@@ -1,11 +1,13 @@
 ---
 /**
  * Footer — surface-1, mono small for legal and locale links (DESIGN.md §4).
- * Columns come from lib/nav.ts footerNav; locale links from i18n.activeLocales.
+ * Columns come from lib/nav.ts footerNav; contact channels from lib/contact.ts;
+ * locale links from i18n.activeLocales.
  */
 import Container from './Container.astro';
 import Wordmark from './Wordmark.astro';
 import { footerNav } from '../lib/nav';
+import { contact, mailHref, telHref, whatsApp } from '../lib/contact';
 import { activeLocales, localizePath, stripLocale, t, type Locale } from '../lib/i18n';
 
 interface Props {
@@ -21,6 +23,7 @@ const year = new Date().getFullYear();
     <div class="footer__brand">
       <Wordmark locale={locale} />
       <p class="footer__tagline">{t(locale, 'site.tagline')}</p>
+      <p class="footer__built">{t(locale, 'footer.builtFor')}</p>
     </div>
 
     <nav class="footer__nav" aria-label={t(locale, 'nav.footer')}>
@@ -48,6 +51,25 @@ const year = new Date().getFullYear();
           </section>
         ))
       }
+
+      <section class="footer__col footer__col--contact">
+        <p class="eyebrow footer__heading">{t(locale, 'footer.contact')}</p>
+        <ul role="list" class="footer__list">
+          <li>
+            <a class="footer__link" href={whatsApp.general} target="_blank" rel="noopener">
+              {t(locale, 'cta.whatsApp')}
+              <span class="sr-only"> (opens in a new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a class="footer__link mono" href={telHref}>{contact.phoneDisplay}</a>
+          </li>
+          <li>
+            <a class="footer__link footer__link--email" href={mailHref}>{contact.email}</a>
+          </li>
+          <li class="footer__reply">{contact.replyWindow}</li>
+        </ul>
+      </section>
     </nav>
 
     <div class="footer__meta mono">
@@ -90,13 +112,22 @@ const year = new Date().getFullYear();
   .footer__tagline {
     margin-block: var(--space-2) 0;
     font-size: var(--text-small);
+    color: var(--text-primary);
+    font-weight: var(--weight-ui);
+  }
+
+  .footer__built {
+    margin-block: var(--space-2) 0;
+    max-inline-size: 28ch;
+    font-size: var(--text-small);
     color: var(--text-muted);
   }
 
+  /* Mobile: one column, each block separated by a hairline. */
   .footer__nav {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--block-gap) var(--grid-gap);
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
   }
 
   .footer__heading {
@@ -122,13 +153,23 @@ const year = new Date().getFullYear();
   .footer__link {
     display: inline-flex;
     align-items: center;
-    min-block-size: var(--space-8);
+    min-block-size: var(--tap-min);
     font-size: var(--text-small);
     color: var(--text-body);
   }
 
   .footer__link:hover {
     color: var(--text-primary);
+  }
+
+  .footer__link--email {
+    overflow-wrap: anywhere;
+  }
+
+  .footer__reply {
+    padding-block-start: var(--space-2);
+    font-size: var(--text-mono-sm);
+    color: var(--text-muted);
   }
 
   .footer__meta {
@@ -150,16 +191,31 @@ const year = new Date().getFullYear();
     list-style: none;
   }
 
+  @media (min-width: 36rem) {
+    .footer__nav {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--block-gap) var(--grid-gap);
+    }
+
+    .footer__link {
+      min-block-size: var(--space-8);
+    }
+  }
+
   @media (min-width: 48rem) {
     .footer__nav {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
   @media (min-width: 64rem) {
     .footer :global(.footer__inner) {
-      grid-template-columns: 2fr 6fr;
+      grid-template-columns: 2fr 7fr;
       column-gap: var(--grid-gap);
+    }
+
+    .footer__nav {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 
     .footer__meta {

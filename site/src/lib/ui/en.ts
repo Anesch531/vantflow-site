@@ -13,8 +13,17 @@ export const en = {
   'nav.group.services': 'Services',
   'nav.group.industries': 'Industries',
   'nav.skip': 'Skip to content',
+  'nav.menu': 'Menu',
+  'nav.menuOpen': 'Open menu',
+  'nav.menuClose': 'Close menu',
 
   'cta.bookAudit': 'Book the audit',
+  'cta.startWhatsApp': 'Start on WhatsApp',
+  'cta.whatsApp': 'WhatsApp',
+  'cta.email': 'Email',
+
+  'footer.contact': 'Contact',
+  'footer.builtFor': 'Evidence-led SEO for agencies and businesses across MENA and North Africa.',
 
   'route.home': 'Home',
   'route.services': 'SEO services',

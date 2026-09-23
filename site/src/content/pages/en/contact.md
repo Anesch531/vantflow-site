@@ -2,10 +2,10 @@
 locale: en
 route: contact
 title: Discuss your SEO priorities with VANTFLOW
-description: ''
+description: 'Contact VANTFLOW by WhatsApp or email about SEO work. Replies arrive within two business days.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'ContactPage'
 noindex: false
 ---
 

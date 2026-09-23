@@ -2,10 +2,10 @@
 locale: en
 route: seoAudit
 title: A fixed-price SEO audit with verifiable next steps
-description: ''
+description: 'A fixed-price SEO audit with a 45-minute walkthrough, documented findings, and clear next paths.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'Service'
 noindex: false
 ---
 

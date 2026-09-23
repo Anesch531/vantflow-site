@@ -2,10 +2,10 @@
 locale: en
 route: technicalSeo
 title: Technical SEO services for pages search engines can trust
-description: ''
+description: 'Technical SEO covering crawl access, indexing, performance, and site structure, with each recommendation tied to evidence.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'Service'
 noindex: false
 ---
 

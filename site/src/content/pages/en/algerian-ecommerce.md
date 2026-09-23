@@ -2,10 +2,10 @@
 locale: en
 route: algerianEcommerce
 title: E-commerce SEO for Algeria built around catalogue discovery
-description: ''
+description: 'SEO for Algerian e-commerce, accounting for French and Arabic search behaviour, catalogue structure, and local market needs.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'Service'
 noindex: false
 ---
 

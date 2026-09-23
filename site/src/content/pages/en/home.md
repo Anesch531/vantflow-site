@@ -2,10 +2,10 @@
 locale: en
 route: home
 title: Every fix carries a reason
-description: ''
+description: 'Evidence-led SEO support for agencies: every fix carries a reason, with clear actions and checks.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'WebPage'
 noindex: false
 ---
 

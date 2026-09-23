@@ -2,10 +2,10 @@
 locale: en
 route: services
 title: SEO services for reviewable delivery
-description: ''
+description: 'Technical, on-page, local, content, and white-label SEO services built around evidence, reasoned action, and verification.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'Service'
 noindex: false
 ---
 

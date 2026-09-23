@@ -2,10 +2,10 @@
 locale: en
 route: pricing
 title: Clear pricing for an evidence-led SEO audit
-description: ''
+description: 'Transparent starting prices for the SEO audit and ongoing delivery, with scope explained before work begins.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'PriceSpecification'
 noindex: false
 ---
 

@@ -24,8 +24,8 @@ assertContentTree(copy);
 const { Content } = await render(entry);
 ---
 
-<BaseLayout locale={locale} title={entry.data.title} description={entry.data.description} noindex={entry.data.noindex}>
-  <section class="hero" aria-labelledby="services-title"><Container><p class="eyebrow">{copy.eyebrow}</p><h1 id="services-title">{entry.data.title}</h1><div class="prose hero__prose"><Content /></div></Container></section>
+<BaseLayout locale={locale} title={entry.data.title} description={entry.data.description} noindex={entry.data.noindex} schemaType={entry.data.schemaType}>
+  <section class="hero" aria-labelledby="services-title"><Container><p class="eyebrow">{copy.eyebrow}</p><h1 id="services-title">{entry.data.title}</h1><div class="prose hero__prose lead"><Content /></div></Container></section>
   <section class="section section--tinted" aria-labelledby="service-list-title"><Container><div class="section__heading"><p class="eyebrow">{copy.listEyebrow}</p><h2 id="service-list-title">{copy.listTitle}</h2><p>{copy.intro}</p></div><div class="cards">{copy.cards.map((card, index) => <article class="card"><p class="mono card__index">0{index + 1}</p><h3>{card.title}</h3><p>{card.body}</p><Button href={hrefFor(card.routeKey, `services.cards[${index}].routeKey`)} variant="link" mono>{card.linkLabel}</Button></article>)}</div></Container></section>
 </BaseLayout>
 
@@ -33,7 +33,7 @@ const { Content } = await render(entry);
   .hero,.section { padding-block: var(--section-gap); }
   .hero { border-block-end: var(--hairline) solid var(--border); }
   .hero__prose { margin-block-start: var(--space-6); color: var(--slate-700); }
-  .hero__prose :global(p) { margin: 0; font-size: var(--text-h3); }
+  .hero__prose :global(p) { margin: 0; }
   h1 { max-inline-size: 18ch; }
   .section--tinted { background: var(--surface-1); }
   .section__heading { max-inline-size: var(--measure); }

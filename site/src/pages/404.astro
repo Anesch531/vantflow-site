@@ -19,7 +19,7 @@ const { Content } = await render(entry);
 const fm = entry.data;
 ---
 
-<BaseLayout locale={locale} title={fm.title} description={fm.description} noindex={fm.noindex}>
+<BaseLayout locale={locale} title={fm.title} description={fm.description} noindex={fm.noindex} schemaType={fm.schemaType}>
   <Container as="section" class="not-found">
     <p class="eyebrow mono">404</p>
     <h1>{fm.title}</h1>

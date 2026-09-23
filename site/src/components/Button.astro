@@ -2,19 +2,30 @@
 /**
  * Button — primary / secondary / link (DESIGN.md §4). Always an <a>: Phase 1 has no
  * forms and no JS, so every action is navigation. One primary per viewport.
+ *
+ * `external` marks off-site destinations (WhatsApp, mail) — opens in a new tab with
+ * rel="noopener" and an sr-only hint; the visible label stays as written.
  */
 interface Props {
   href: string;
   variant?: 'primary' | 'secondary' | 'link';
   /** Mono when the link is a route or data reference (DESIGN.md §4 "Link-style"). */
   mono?: boolean;
+  external?: boolean;
   class?: string;
 }
-const { href, variant = 'secondary', mono = false, class: className = '' } = Astro.props;
+const { href, variant = 'secondary', mono = false, external = false, class: className = '' } = Astro.props;
+const isExternal = external || /^(https?:)?\/\//.test(href);
 ---
 
-<a href={href} class:list={['btn', `btn--${variant}`, { mono }, className]}>
+<a
+  href={href}
+  class:list={['btn', `btn--${variant}`, { mono }, className]}
+  target={isExternal ? '_blank' : undefined}
+  rel={isExternal ? 'noopener' : undefined}
+>
   <slot />
+  {isExternal && <span class="sr-only"> (opens in a new tab)</span>}
 </a>
 
 <style>
@@ -22,6 +33,7 @@ const { href, variant = 'secondary', mono = false, class: className = '' } = Ast
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: var(--space-2);
     min-block-size: var(--tap-min);
     padding-inline: var(--space-4);
     border-radius: var(--radius-sm);
@@ -31,15 +43,26 @@ const { href, variant = 'secondary', mono = false, class: className = '' } = Ast
     line-height: var(--lh-small);
     font-weight: var(--weight-ui);
     text-decoration: none;
-    white-space: nowrap;
+    text-align: center;
     transition:
       color var(--motion-fast),
       background-color var(--motion-fast),
-      border-color var(--motion-fast);
+      border-color var(--motion-fast),
+      transform var(--motion-fast);
+  }
+
+  /* Filled and outlined buttons keep a single line; link-style buttons may wrap. */
+  .btn--primary,
+  .btn--secondary {
+    white-space: nowrap;
   }
 
   .btn:hover {
     text-decoration: none;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
   }
 
   .btn--primary {
@@ -52,21 +75,31 @@ const { href, variant = 'secondary', mono = false, class: className = '' } = Ast
     color: var(--on-action);
   }
 
+  .btn--primary:active {
+    background: var(--signal-700);
+  }
+
   .btn--secondary {
-    background: transparent;
+    background: var(--surface-0);
     border-color: var(--border-strong);
     color: var(--text-primary);
   }
 
   .btn--secondary:hover {
     background: var(--surface-1);
+    border-color: var(--slate-500);
     color: var(--text-primary);
+  }
+
+  .btn--secondary:active {
+    background: var(--surface-2);
   }
 
   .btn--link {
     min-block-size: auto;
     padding-inline: 0;
     color: var(--action);
+    text-align: start;
   }
 
   .btn--link:hover {
@@ -77,5 +110,11 @@ const { href, variant = 'secondary', mono = false, class: className = '' } = Ast
   .btn.mono {
     font-family: var(--font-mono);
     font-size: var(--text-mono);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn:active {
+      transform: none;
+    }
   }
 </style>

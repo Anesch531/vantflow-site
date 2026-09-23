@@ -5,7 +5,7 @@ title: Privacy, stated plainly
 description: How VANTFLOW handles enquiry data, cookies, analytics, and privacy requests.
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'WebPage'
 noindex: true
 ---
 

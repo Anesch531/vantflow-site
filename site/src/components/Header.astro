@@ -1,77 +1,146 @@
 ---
 /**
- * Header — 64px, surface-0, hairline bottom border (DESIGN.md §4 "Navigation").
+ * Header — 64px, surface-0, hairline bottom border, sticky (DESIGN.md §4 "Navigation").
  * Wordmark at the inline start, nav, the single primary CTA at the inline end.
+ *
+ * Below 64rem the nav collapses behind a JS-free <details> disclosure (hamburger).
+ * The header stays exactly 64px tall at every width; the CTA remains visible on mobile.
  */
 import Container from './Container.astro';
 import Wordmark from './Wordmark.astro';
 import Nav from './Nav.astro';
 import Cta from './Cta.astro';
-import type { Locale } from '../lib/i18n';
+import { t, type Locale } from '../lib/i18n';
 
 interface Props {
   locale: Locale;
+  /** Demote the header CTA when the page hero already carries the primary button. */
+  ctaVariant?: 'primary' | 'secondary';
 }
-const { locale } = Astro.props;
+const { locale, ctaVariant = 'primary' } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
 <header class="header">
   <Container class="header__inner">
-    <div class="header__brand">
-      <Wordmark locale={locale} />
-      <Cta locale={locale} class="header__cta header__cta--mobile" />
+    <Wordmark locale={locale} />
+
+    <!-- Desktop nav (≥ 64rem) -->
+    <div class="header__nav">
+      <Nav locale={locale} currentPath={currentPath} />
     </div>
-    <Nav locale={locale} currentPath={currentPath} />
-    <Cta locale={locale} class="header__cta header__cta--desktop" />
+
+    <Cta locale={locale} variant={ctaVariant} class="header__cta" />
+
+    <!-- Mobile menu (< 64rem): native disclosure, no script -->
+    <details class="menu">
+      <summary class="menu__toggle" aria-label={t(locale, 'nav.menu')}>
+        <svg class="menu__icon menu__icon--open" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+        </svg>
+        <svg class="menu__icon menu__icon--close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+        </svg>
+      </summary>
+      <div class="menu__panel">
+        <Nav locale={locale} currentPath={currentPath} mobile />
+      </div>
+    </details>
   </Container>
 </header>
 
 <style>
   .header {
-    position: relative;
+    position: sticky;
+    inset-block-start: 0;
+    z-index: var(--z-header);
     background: var(--surface-0);
     border-block-end: var(--hairline) solid var(--border);
   }
 
   .header :global(.header__inner) {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: var(--space-2) var(--space-6);
-    min-block-size: var(--header-height);
-    padding-block: var(--space-2);
+    gap: var(--space-3);
+    block-size: var(--header-height);
   }
 
-  .header__brand {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1 1 100%;
-  }
-
-  /* CTA is rendered twice for layout, but only one is ever displayed → one primary per viewport. */
-  .header :global(.header__cta--desktop) {
+  .header__nav {
     display: none;
   }
 
+  .header :global(.header__cta) {
+    margin-inline-start: auto;
+  }
+
+  /* ---- Mobile disclosure ------------------------------------------------ */
+  .menu {
+    position: static;
+  }
+
+  .menu__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--tap-min);
+    block-size: var(--tap-min);
+    margin-inline-end: calc(-1 * var(--space-2));
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .menu__toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .menu__toggle:hover {
+    background: var(--surface-1);
+  }
+
+  .menu__icon--close,
+  .menu[open] .menu__icon--open {
+    display: none;
+  }
+
+  .menu[open] .menu__icon--close {
+    display: block;
+  }
+
+  .menu__panel {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-start: 100%;
+    z-index: var(--z-menu);
+    max-block-size: calc(100dvh - var(--header-height));
+    overflow-y: auto;
+    padding: var(--space-4) var(--gutter) var(--space-6);
+    background: var(--surface-0);
+    border-block-end: var(--hairline) solid var(--border);
+    box-shadow: 0 12px 24px -16px rgb(17 24 39 / 0.25);
+  }
+
+  /* ---- Desktop -------------------------------------------------------- */
   @media (min-width: 64rem) {
     .header :global(.header__inner) {
-      flex-wrap: nowrap;
-      padding-block: 0;
+      gap: var(--space-6);
     }
 
-    .header__brand {
-      flex: 0 0 auto;
+    .header__nav {
+      display: block;
     }
 
-    .header :global(.header__cta--mobile) {
+    .menu {
       display: none;
     }
+  }
 
-    .header :global(.header__cta--desktop) {
-      display: inline-flex;
-      margin-inline-start: auto;
+  /* Very narrow devices (< 360px): the CTA yields to the wordmark + menu. */
+  @media (max-width: 22.49rem) {
+    .header :global(.header__cta) {
+      padding-inline: var(--space-3);
+      font-size: var(--text-mono-sm);
     }
   }
 </style>

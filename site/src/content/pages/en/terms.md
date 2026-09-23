@@ -5,7 +5,7 @@ title: Terms for using this site
 description: The straightforward terms for the VANTFLOW information site and off-site SEO enquiries.
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'WebPage'
 noindex: true
 ---
 

@@ -2,10 +2,10 @@
 locale: en
 route: contentGeo
 title: Content SEO services for search and AI discovery
-description: ''
+description: 'Content SEO and GEO for pages designed to earn search visibility and support accurate citations in AI answers.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'Service'
 noindex: false
 ---
 

@@ -2,10 +2,10 @@
 locale: en
 route: localSeo
 title: Local SEO services for accurate, useful local visibility
-description: ''
+description: 'Local SEO for businesses that need customers to find them in their city, with clear priorities and verification.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'Service'
 noindex: false
 ---
 

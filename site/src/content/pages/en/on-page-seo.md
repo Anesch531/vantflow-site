@@ -2,10 +2,10 @@
 locale: en
 route: onPageSeo
 title: On-page SEO services for clearer, more useful pages
-description: ''
+description: 'On-page SEO for titles, headings, internal links, and content structure, based on what search evidence shows.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'Service'
 noindex: false
 ---
 

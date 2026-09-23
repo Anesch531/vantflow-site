@@ -5,7 +5,7 @@ title: Work built from evidence, not promises
 description: A published baseline self-audit of vantflow.tech before the Astro rebuild.
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'WebPage'
 noindex: false
 ---
 

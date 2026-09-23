@@ -2,10 +2,10 @@
 locale: en
 route: whiteLabelSeo
 title: White-label SEO delivery for agencies
-description: ''
+description: 'White-label SEO delivery for agencies that need additional capacity without losing visibility into the work.'
 canonical: ''
 alternates: []
-schemaType: ''
+schemaType: 'Service'
 noindex: false
 ---
 
