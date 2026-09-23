@@ -1,0 +1,13 @@
+{
+  "eyebrow": "Service overview",
+  "listEyebrow": "Choose the constraint",
+  "listTitle": "Five ways to make search work clearer",
+  "intro": "SEO work is easier to buy when the scope is clear. These services cover partner delivery, search foundations, page intent, local visibility, and content systems. Each route explains the problem it addresses, the method used, and what can be reviewed.",
+  "cards": [
+    { "title": "White-label SEO", "body": "Add documented SEO delivery behind your agency brand, with clear ownership, handoffs, and review points.", "linkLabel": "Explore white-label SEO", "routeKey": "whiteLabelSeo" },
+    { "title": "Technical SEO", "body": "Find and prioritise crawl, indexing, performance, and structural issues that make important pages harder to understand.", "linkLabel": "Explore technical SEO", "routeKey": "technicalSeo" },
+    { "title": "On-page SEO", "body": "Align page structure, language, internal links, and search intent so useful pages communicate their purpose clearly.", "linkLabel": "Explore on-page SEO", "routeKey": "onPageSeo" },
+    { "title": "Local SEO", "body": "Build clearer local signals and paths for businesses that depend on discovery in a defined place or service area.", "linkLabel": "Explore local SEO", "routeKey": "localSeo" },
+    { "title": "Content SEO", "body": "Plan and improve content around evidence, topic coverage, audience questions, and the next commercial action.", "linkLabel": "Explore content SEO", "routeKey": "contentGeo" }
+  ]
+}

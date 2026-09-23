@@ -1,0 +1,46 @@
+{
+  "heroEyebrow": "Local SEO",
+  "problem": {
+    "eyebrow": "The local constraint",
+    "title": "Local discovery depends on signals that must agree",
+    "body": "People need accurate business information at the moment they choose where to go or whom to contact. Inconsistent details, weak category context, and neglected profile signals make that decision harder to support."
+  },
+  "method": {
+    "eyebrow": "The local method",
+    "title": "Build a consistent local presence from the business outward",
+    "intro": "The focus stays on the business, its services, its customers, and the evidence that supports local relevance.",
+    "steps": [
+      { "number": "01", "title": "Business facts", "body": "Confirm the name, address, phone, hours, service details, and ownership information that customers and platforms should receive consistently." },
+      { "number": "02", "title": "Profile relevance", "body": "Review categories, services, descriptions, photos, and updates against what the business actually offers and what local customers need to know." },
+      { "number": "03", "title": "Trust signals", "body": "Map reviews, responses, mentions, and local references into a process that supports accuracy without manufacturing endorsements or activity." },
+      { "number": "04", "title": "Measure and maintain", "body": "Set a practical review cadence for changes, questions, profile health, and local visibility so improvements do not depend on one launch." }
+    ]
+  },
+  "outcome": {
+    "eyebrow": "The local outcome",
+    "title": "A local presence customers can verify",
+    "body": "The result is a maintainable local SEO process built around accurate information and useful customer signals, not a promise of a particular map position.",
+    "points": [
+      "Consistent business facts across important profiles",
+      "Categories and services that reflect the real offer",
+      "A responsible workflow for reviews and profile updates",
+      "Checks that keep local information current"
+    ]
+  },
+  "links": [
+    { "label": "Explore all SEO services", "routeKey": "services" },
+    { "label": "Strengthen pages with on-page SEO services", "routeKey": "onPageSeo" },
+    { "label": "Support discovery with content SEO services", "routeKey": "contentGeo" },
+    { "label": "Start with an SEO audit", "routeKey": "seoAudit" },
+    { "label": "See our SEO work approach", "routeKey": "work" }
+  ],
+  "related": {
+    "eyebrow": "Related routes",
+    "title": "Connect local work to the wider site",
+    "ariaLabel": "Related local SEO routes"
+  },
+  "cta": {
+    "eyebrow": "Next step",
+    "title": "Discuss the local signals your business needs to maintain"
+  }
+}

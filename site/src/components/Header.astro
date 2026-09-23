@@ -1,0 +1,77 @@
+---
+/**
+ * Header — 64px, surface-0, hairline bottom border (DESIGN.md §4 "Navigation").
+ * Wordmark at the inline start, nav, the single primary CTA at the inline end.
+ */
+import Container from './Container.astro';
+import Wordmark from './Wordmark.astro';
+import Nav from './Nav.astro';
+import Cta from './Cta.astro';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <Container class="header__inner">
+    <div class="header__brand">
+      <Wordmark locale={locale} />
+      <Cta locale={locale} class="header__cta header__cta--mobile" />
+    </div>
+    <Nav locale={locale} currentPath={currentPath} />
+    <Cta locale={locale} class="header__cta header__cta--desktop" />
+  </Container>
+</header>
+
+<style>
+  .header {
+    position: relative;
+    background: var(--surface-0);
+    border-block-end: var(--hairline) solid var(--border);
+  }
+
+  .header :global(.header__inner) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-6);
+    min-block-size: var(--header-height);
+    padding-block: var(--space-2);
+  }
+
+  .header__brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 1 100%;
+  }
+
+  /* CTA is rendered twice for layout, but only one is ever displayed → one primary per viewport. */
+  .header :global(.header__cta--desktop) {
+    display: none;
+  }
+
+  @media (min-width: 64rem) {
+    .header :global(.header__inner) {
+      flex-wrap: nowrap;
+      padding-block: 0;
+    }
+
+    .header__brand {
+      flex: 0 0 auto;
+    }
+
+    .header :global(.header__cta--mobile) {
+      display: none;
+    }
+
+    .header :global(.header__cta--desktop) {
+      display: inline-flex;
+      margin-inline-start: auto;
+    }
+  }
+</style>

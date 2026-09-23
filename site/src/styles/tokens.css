@@ -1,0 +1,123 @@
+/*
+ * tokens.css — generated from site/DESIGN.md (§2 colour, §3 type, §5 space/layout, §6 motion).
+ * The ONLY place a raw hex, px or font stack may appear. Components consume variables.
+ * Frozen after T02. Changing a value here is a design task, not a page fix.
+ */
+:root {
+  /* ---- §2 Slate ramp ---------------------------------------------------- */
+  --slate-0: #ffffff;
+  --slate-50: #f6f8fa;
+  --slate-100: #eef1f5;
+  --slate-200: #d9dee6;
+  --slate-300: #b8c0cc;
+  --slate-500: #6b7685;
+  --slate-700: #3a4453;
+  --slate-900: #111827;
+
+  /* ---- §2 Signal blue --------------------------------------------------- */
+  --signal-600: #1d4ed8;
+  --signal-700: #1e40af;
+  --signal-100: #dbeafe;
+  --focus: #1d4ed8;
+
+  /* ---- §2 Semantic (audit findings only) -------------------------------- */
+  --ok: #15803d;
+  --warn: #b45309;
+  --fail: #b91c1c;
+
+  /* ---- §2 Roles --------------------------------------------------------- */
+  --surface-0: var(--slate-0);
+  --surface-1: var(--slate-50);
+  --surface-2: var(--slate-100);
+  --text-primary: var(--slate-900);
+  --text-body: var(--slate-700);
+  --text-muted: var(--slate-500);
+  --border: var(--slate-200);
+  --border-strong: var(--slate-300);
+  --action: var(--signal-600);
+  --action-hover: var(--signal-700);
+  --action-tint: var(--signal-100);
+  --on-action: var(--slate-0);
+
+  /* ---- §3 Font families (self-hosted variable fonts, see ASSETS.md) ----- */
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-arabic: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', system-ui, sans-serif;
+
+  /* ---- §3 Weights ------------------------------------------------------- */
+  --weight-body: 400;
+  --weight-ui: 500;
+  --weight-heading: 600;
+
+  /* ---- §3 Type scale: size / line-height / tracking --------------------- */
+  --text-display: 3.5rem;      --lh-display: 1.05; --ls-display: -0.025em;
+  --text-h1: 2.5rem;           --lh-h1: 1.1;       --ls-h1: -0.02em;
+  --text-h2: 1.75rem;          --lh-h2: 1.2;       --ls-h2: -0.015em;
+  --text-h3: 1.25rem;          --lh-h3: 1.3;       --ls-h3: -0.01em;
+  --text-body: 1.0625rem;      --lh-body: 1.6;     --ls-body: 0;
+  --text-small: 0.9375rem;     --lh-small: 1.5;    --ls-small: 0;
+  --text-mono: 0.875rem;       --lh-mono: 1.5;     --ls-mono: 0;
+  --text-mono-sm: 0.8125rem;   --lh-mono-sm: 1.4;  --ls-mono-sm: 0.02em;
+  --measure: 68ch;
+
+  /* ---- §5 Space (4px base) ---------------------------------------------- */
+  --space-1: 0.25rem;   /* 4  */
+  --space-2: 0.5rem;    /* 8  */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-6: 1.5rem;    /* 24 */
+  --space-8: 2rem;      /* 32 */
+  --space-12: 3rem;     /* 48 */
+  --space-16: 4rem;     /* 64 */
+  --space-24: 6rem;     /* 96 */
+  --space-32: 8rem;     /* 128 */
+
+  /* ---- §5 Radii --------------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+
+  /* ---- §5 Layout -------------------------------------------------------- */
+  --container-max: 1200px;
+  --gutter: var(--space-6);
+  --grid-gap: var(--space-6);
+  --section-gap: var(--space-16);
+  --block-gap: var(--space-8);
+  --line-gap: var(--space-4);
+  --header-height: 64px;
+  --tap-min: 44px;
+  --hairline: 1px;
+  --wordmark-height: 20px;
+  --wordmark-tracking: -0.03em;
+
+  /* ---- §6 Motion -------------------------------------------------------- */
+  --motion-fast: 120ms ease-out;
+
+  /* ---- §7 Focus --------------------------------------------------------- */
+  --focus-width: 2px;
+  --focus-offset: 2px;
+}
+
+/* §3 mobile scale + §5 mobile rhythm (< 768px) */
+@media (max-width: 47.99rem) {
+  :root {
+    --text-display: 2.5rem;
+    --text-h1: 2rem;
+    --text-h2: 1.5rem;
+  }
+}
+
+/* §5: gutters step up at 768px, section rhythm at desktop */
+@media (min-width: 48rem) {
+  :root {
+    --gutter: var(--space-8);
+    --section-gap: var(--space-24);
+  }
+}
+
+/* §6: reduced motion → instant */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms linear;
+  }
+}

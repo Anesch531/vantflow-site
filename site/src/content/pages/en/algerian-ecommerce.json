@@ -1,0 +1,46 @@
+{
+  "heroEyebrow": "Algerian e-commerce SEO",
+  "problem": {
+    "eyebrow": "The Algerian catalogue constraint",
+    "title": "Product demand cannot reach pages hidden by catalogue complexity",
+    "body": "Algerian e-commerce sites often spread product discovery across categories, filters, variants, and changing stock. When those routes compete, disappear from internal links, or omit practical purchase information, search engines and local shoppers receive an incomplete view of the catalogue."
+  },
+  "method": {
+    "eyebrow": "The Algerian e-commerce method",
+    "title": "Turn the catalogue into clear search and buying paths",
+    "intro": "The method joins Algerian product demand, crawlable category architecture, and content priorities around how local shoppers compare products and decide what to do next.",
+    "steps": [
+      { "number": "01", "title": "Map Algerian product demand", "body": "Group Algerian search themes by product, category, attribute, and buying intent so each useful destination has a defined role in the catalogue." },
+      { "number": "02", "title": "Repair catalogue crawl paths", "body": "Review Algerian e-commerce navigation, filters, pagination, canonicals, and internal links, using automated checks to surface patterns for direct technical review." },
+      { "number": "03", "title": "Prioritise category content", "body": "Plan Algerian category and product guidance around genuine selection questions, stock context, delivery coverage, and cash-on-delivery information where it affects the purchase decision." },
+      { "number": "04", "title": "Verify discovery through change", "body": "Sequence Algerian catalogue fixes by impact and dependency, then verify crawl access, indexation signals, and content placement after templates or inventory states change." }
+    ]
+  },
+  "outcome": {
+    "eyebrow": "The Algerian e-commerce outcome",
+    "title": "A catalogue that supports discovery before the order decision",
+    "body": "Algerian e-commerce teams receive a practical sequence for strengthening category access, reducing competing routes, and publishing the content shoppers need before choosing a product or placing an order.",
+    "points": [
+      "Algerian product themes assigned to useful catalogue destinations",
+      "Category and product routes connected by clearer internal links",
+      "Technical priorities tied to catalogue templates and states",
+      "Buying content shaped around local delivery and order questions"
+    ]
+  },
+  "links": [
+    { "label": "Improve catalogues with technical SEO services", "routeKey": "technicalSeo" },
+    { "label": "Plan category growth with content SEO services", "routeKey": "contentGeo" },
+    { "label": "Book a fixed-price SEO audit", "routeKey": "seoAudit" },
+    { "label": "Explore all SEO services", "routeKey": "services" },
+    { "label": "See our SEO work approach", "routeKey": "work" }
+  ],
+  "related": {
+    "eyebrow": "Supporting services",
+    "title": "Connect Algerian e-commerce priorities to the right SEO work",
+    "ariaLabel": "SEO services supporting Algerian e-commerce websites"
+  },
+  "cta": {
+    "eyebrow": "Next step",
+    "title": "Discuss the catalogue constraints affecting your Algerian e-commerce site"
+  }
+}

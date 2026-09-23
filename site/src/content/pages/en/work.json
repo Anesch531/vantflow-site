@@ -1,0 +1,16 @@
+{
+  "heroEyebrow": "VANTFLOW work / baseline 01",
+  "refresh": "Audited 2026-09-23 · re-check planned about every 6 months",
+  "context": { "eyebrow": "Context", "title": "A baseline before the rebuild", "body": "The target was https://vantflow.tech/ on the live pre-rebuild site. The crawl followed links from the homepage, so this is a narrow baseline, not a claim about future traffic, rankings, or outcomes." },
+  "method": { "eyebrow": "Method", "title": "Crawl, prioritize, fix, verify", "steps": [
+    { "title": "Crawl", "body": "Run an OpenSEO site audit across the live same-origin footprint." },
+    { "title": "Prioritize", "body": "Separate observed issues from assumptions. Keep the list honest when the count is small." },
+    { "title": "Fix", "body": "Apply the rebuild and address the specific finding, without inventing a larger problem list." },
+    { "title": "Verify", "body": "Re-audit the site and compare the result with the baseline evidence." }
+  ] },
+  "findings": { "eyebrow": "Real findings", "title": "One information issue, three pages crawled", "intro": "OpenSEO crawled three URLs. All returned HTTP 200. One info-level issue was flagged.", "issue": { "type": "INFO / title-too-long", "title": "Homepage title exceeds the preferred length", "body": "Finding: the homepage title was “VANTFLOW | Automation Systems for Agencies and Property Teams”. The issue is limited to title length; no critical issue is claimed here.", "evidence": "Before → fix: long homepage title → shorten while preserving the page’s meaning, then re-audit." }, "scopeNote": "Crawled: /, /privacy.html, /terms.html. Only three URLs were discovered from the homepage; services and proof pages were not part of that live footprint yet." },
+  "next": { "eyebrow": "Next steps", "title": "Expand the footprint, then check the work", "body": "The rebuild expands the information architecture beyond the three discovered URLs. The next useful step is to publish the intended pages, correct the homepage title, and run the same crawl again.", "verify": "Verification means checking the new crawl’s URL coverage, HTTP status, title output, and any remaining issue categories against this baseline." },
+  "links": [ { "label": "See the services", "routeKey": "services" }, { "label": "Read the SEO audit offer", "routeKey": "seoAudit" }, { "label": "View audit pricing", "routeKey": "pricing" } ],
+  "related": { "eyebrow": "Related routes", "title": "Continue from the evidence", "ariaLabel": "Related VANTFLOW routes" },
+  "cta": { "eyebrow": "Your baseline", "title": "Book the audit and get a fix list you can verify" }
+}

@@ -1,0 +1,47 @@
+{
+  "heroEyebrow": "Contact VANTFLOW",
+  "options": {
+    "eyebrow": "Choose a channel",
+    "title": "Start with the context you already have",
+    "intro": "No form or account is required. Send a short message now, then add detail as the conversation develops."
+  },
+  "whatsApp": {
+    "label": "Primary contact",
+    "title": "Message VANTFLOW on WhatsApp",
+    "body": "Use the prepared introduction, then add your website and the SEO question you want to discuss.",
+    "action": "Start a WhatsApp message",
+    "phone": "+213 791 19 23 50",
+    "href": "https://wa.me/213791192350?text=Hi%20VANTFLOW%20%E2%80%94%20I%27d%20like%20to%20discuss%20SEO."
+  },
+  "email": {
+    "label": "Email fallback",
+    "title": "Send a longer note by email",
+    "body": "Email works well when you need to include detailed context or links.",
+    "address": "anesch829@gmail.com",
+    "href": "mailto:anesch829@gmail.com"
+  },
+  "replyNote": "VANTFLOW aims to reply within two business days. Timing can vary with the detail needed to review your request.",
+  "prepare": {
+    "eyebrow": "Useful context",
+    "title": "A few details make the first reply more useful",
+    "body": "You do not need a finished brief. If available, include:",
+    "items": [
+      "Your website or the page involved",
+      "The search or business problem you have noticed",
+      "Any deadline, platform, market, or implementation constraint"
+    ]
+  },
+  "links": [
+    { "label": "Explore VANTFLOW services", "routeKey": "services" },
+    { "label": "Review the fixed-price SEO audit", "routeKey": "seoAudit" }
+  ],
+  "related": {
+    "eyebrow": "Before you write",
+    "title": "Review the available starting points",
+    "ariaLabel": "Related VANTFLOW routes"
+  },
+  "cta": {
+    "eyebrow": "A defined starting point",
+    "title": "Prefer a scoped review? Start with the audit"
+  }
+}

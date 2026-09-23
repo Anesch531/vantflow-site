@@ -1,0 +1,72 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/Container.astro';
+import Button from '../../components/Button.astro';
+import { primaryCta } from '../../lib/cta';
+import { localizePath, t, type Locale } from '../../lib/i18n';
+import { route, routeKeys, type RouteKey } from '../../lib/routes';
+import copy from '../../content/pages/en/seo-audit.json';
+
+const locale: Locale = 'en';
+const entry = await getEntry('pages', 'en/seo-audit');
+if (!entry) throw new Error('T09: missing content entry pages/en/seo-audit');
+function assertContentTree(value: unknown, path = 'seo-audit'): void {
+  if (typeof value === 'string') { if (!value.trim()) throw new Error(`T09: empty copy value at ${path}`); return; }
+  if (Array.isArray(value)) { if (!value.length) throw new Error(`T09: empty copy array at ${path}`); value.forEach((x, i) => assertContentTree(x, `${path}[${i}]`)); return; }
+  if (value && typeof value === 'object') { const entries = Object.entries(value); if (!entries.length) throw new Error(`T09: empty copy object at ${path}`); entries.forEach(([k, x]) => assertContentTree(x, `${path}.${k}`)); return; }
+  throw new Error(`T09: unsupported copy value at ${path}`);
+}
+function hrefFor(value: string, path: string): string {
+  if (!routeKeys.includes(value as RouteKey)) throw new Error(`T09: invalid route key "${value}" at ${path}`);
+  return localizePath(route(value as RouteKey).path, locale);
+}
+assertContentTree(copy);
+const { Content } = await render(entry);
+const ctaHref = localizePath(primaryCta.route.path, locale);
+---
+
+<BaseLayout locale={locale} title={entry.data.title} description={entry.data.description} noindex={entry.data.noindex}>
+  <section class="hero" aria-labelledby="audit-title"><Container><div class="hero__grid"><div><p class="eyebrow">{copy.heroEyebrow}</p><h1 id="audit-title">{entry.data.title}</h1><div class="prose hero__prose"><Content /></div></div><aside class="price" aria-label={copy.offer.priceAriaLabel}><p class="price__intro">{copy.offer.introPrice}</p><p class="price__anchor">{copy.offer.anchorLabel} <del>{copy.offer.anchorPrice}</del></p><p>{copy.offer.rateNote}</p><Button href={copy.offer.whatsAppHref} variant="primary">{copy.offer.action}</Button></aside></div></Container></section>
+  <section class="section" aria-labelledby="audit-included-title"><Container><div class="section__heading"><p class="eyebrow">{copy.included.eyebrow}</p><h2 id="audit-included-title">{copy.included.title}</h2><p>{copy.included.intro}</p></div><ul class="cards">{copy.included.items.map((item) => <li><h3>{item.title}</h3><p>{item.body}</p></li>)}</ul></Container></section>
+  <section class="section section--tinted" aria-labelledby="audit-process-title"><Container><div class="section__heading"><p class="eyebrow">{copy.process.eyebrow}</p><h2 id="audit-process-title">{copy.process.title}</h2><p>{copy.process.intro}</p></div><ol class="steps">{copy.process.items.map((item) => <li><span class="mono">{item.number}</span><div><h3>{item.title}</h3><p>{item.body}</p></div></li>)}</ol></Container></section>
+  <section class="section" aria-labelledby="audit-fit-title"><Container><div class="split"><div class="section__heading"><p class="eyebrow">{copy.fit.eyebrow}</p><h2 id="audit-fit-title">{copy.fit.title}</h2></div><div class="section__body"><p>{copy.fit.body}</p><ul>{copy.fit.items.map((item) => <li>{item}</li>)}</ul></div></div></Container></section>
+  <section class="section section--tinted" aria-labelledby="audit-next-title"><Container><div class="split"><div class="section__heading"><p class="eyebrow">{copy.next.eyebrow}</p><h2 id="audit-next-title">{copy.next.title}</h2></div><div class="section__body"><p>{copy.next.body}</p><p>{copy.next.credit}</p><Button href={copy.offer.whatsAppHref} variant="primary">{copy.offer.action}</Button></div></div></Container></section>
+  <section class="section" aria-labelledby="audit-links-title"><Container><div class="section__heading"><p class="eyebrow">{copy.related.eyebrow}</p><h2 id="audit-links-title">{copy.related.title}</h2></div><nav class="link-grid" aria-label={copy.related.ariaLabel}>{copy.links.map((link, index) => <a href={hrefFor(link.routeKey, `seo-audit.links[${index}].routeKey`)}>{link.label}</a>)}</nav></Container></section>
+  <section class="closing" aria-labelledby="audit-cta-title"><Container><div class="closing__inner"><div><p class="eyebrow">{copy.cta.eyebrow}</p><h2 id="audit-cta-title">{copy.cta.title}</h2></div><Button href={ctaHref} variant="secondary">{t(locale, primaryCta.labelKey)}</Button></div></Container></section>
+</BaseLayout>
+
+<style>
+  .hero,.section { padding-block: var(--section-gap); }
+  .hero { border-block-end: var(--hairline) solid var(--border); }
+  .hero__grid,.split { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-12); }
+  .hero__prose { margin-block-start: var(--space-6); color: var(--slate-700); }
+  .hero__prose :global(p) { margin: 0; font-size: var(--text-h3); }
+  h1 { max-inline-size: 20ch; }
+  .price { align-self: start; padding: var(--space-8); border: var(--hairline) solid var(--action); background: var(--surface-1); }
+  .price p { margin: 0; }
+  .price__intro { font-family: var(--font-mono); font-size: var(--text-display); font-weight: var(--weight-heading); color: var(--action); }
+  .price__anchor { margin-block: var(--space-2) var(--space-4) !important; font-family: var(--font-mono); }
+  .price :global(.btn) { margin-block-start: var(--space-6); }
+  .section--tinted,.closing { background: var(--surface-1); border-block: var(--hairline) solid var(--border); }
+  .section__heading,.section__body { max-inline-size: var(--measure); }
+  .section__heading > p:last-child,.section__body,.cards p,.steps p { color: var(--slate-700); }
+  .section__heading > p:last-child { margin-block-start: var(--space-4); }
+  .cards,.steps { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); margin: var(--space-12) 0 0; padding: 0; list-style: none; }
+  .cards li,.steps li { padding-block-start: var(--space-6); border-block-start: var(--hairline) solid var(--border); }
+  .cards h3,.cards p,.steps h3,.steps p { margin: 0; }
+  .cards p,.steps p { margin-block-start: var(--space-3); }
+  .steps li { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-4); }
+  .steps span { color: var(--action); }
+  .section__body ul { margin-block: var(--space-6) 0; padding-inline-start: var(--space-6); }
+  .section__body li + li { margin-block-start: var(--space-3); }
+  .section__body p + p { margin-block-start: var(--space-6); }
+  .section__body :global(.btn) { margin-block-start: var(--space-6); }
+  .link-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); margin-block-start: var(--space-8); }
+  .link-grid a { min-block-size: var(--tap-min); padding: var(--space-4); border: var(--hairline) solid var(--border); background: var(--surface-0); color: var(--action); }
+  .closing { padding-block: var(--space-12); }
+  .closing__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-6); }
+  .closing h2 { max-inline-size: 28ch; }
+  @media (min-width: 48rem) { .hero__grid,.split { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cards,.steps,.link-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 30rem) { .closing__inner { align-items: stretch; flex-direction: column; } .closing__inner :global(.btn) { inline-size: 100%; white-space: normal; } }
+</style>

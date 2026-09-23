@@ -1,0 +1,62 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/Container.astro';
+import Button from '../../components/Button.astro';
+import { primaryCta } from '../../lib/cta';
+import { localizePath, t, type Locale } from '../../lib/i18n';
+import { route, routeKeys, type RouteKey } from '../../lib/routes';
+import copy from '../../content/pages/en/about.json';
+
+const locale: Locale = 'en';
+const entry = await getEntry('pages', 'en/about');
+if (!entry) throw new Error('T08: missing content entry pages/en/about');
+function assertContentTree(value: unknown, path = 'about'): void {
+  if (typeof value === 'string') { if (!value.trim()) throw new Error(`T08: empty copy value at ${path}`); return; }
+  if (Array.isArray(value)) { if (!value.length) throw new Error(`T08: empty copy array at ${path}`); value.forEach((x, i) => assertContentTree(x, `${path}[${i}]`)); return; }
+  if (value && typeof value === 'object') { const entries = Object.entries(value); if (!entries.length) throw new Error(`T08: empty copy object at ${path}`); entries.forEach(([k, x]) => assertContentTree(x, `${path}.${k}`)); return; }
+  throw new Error(`T08: unsupported copy value at ${path}`);
+}
+function hrefFor(value: string, path: string): string {
+  if (!routeKeys.includes(value as RouteKey)) throw new Error(`T08: invalid route key "${value}" at ${path}`);
+  return localizePath(route(value as RouteKey).path, locale);
+}
+assertContentTree(copy);
+const { Content } = await render(entry);
+const ctaHref = localizePath(primaryCta.route.path, locale);
+---
+
+<BaseLayout locale={locale} title={entry.data.title} description={entry.data.description} noindex={entry.data.noindex}>
+  <section class="hero" aria-labelledby="about-title"><Container><p class="eyebrow">{copy.heroEyebrow}</p><h1 id="about-title">{entry.data.title}</h1><div class="prose hero__prose"><Content /></div></Container></section>
+  <section class="section" aria-labelledby="about-practice-title"><Container><div class="split"><div class="section__heading"><p class="eyebrow">{copy.practice.eyebrow}</p><h2 id="about-practice-title">{copy.practice.title}</h2></div><div class="section__body"><p>{copy.practice.body}</p><p>{copy.practice.history}</p></div></div></Container></section>
+  <section class="section section--tinted" aria-labelledby="about-principles-title"><Container><div class="section__heading"><p class="eyebrow">{copy.principles.eyebrow}</p><h2 id="about-principles-title">{copy.principles.title}</h2><p>{copy.principles.intro}</p></div><ol class="principles">{copy.principles.items.map((item) => <li><span class="mono">{item.number}</span><div><h3>{item.title}</h3><p>{item.body}</p></div></li>)}</ol></Container></section>
+  <section class="section" aria-labelledby="about-delivery-title"><Container><div class="split"><div class="section__heading"><p class="eyebrow">{copy.delivery.eyebrow}</p><h2 id="about-delivery-title">{copy.delivery.title}</h2></div><div class="section__body"><p>{copy.delivery.body}</p><p>{copy.delivery.review}</p></div></div></Container></section>
+  <section class="section section--tinted" aria-labelledby="about-links-title"><Container><div class="section__heading"><p class="eyebrow">{copy.related.eyebrow}</p><h2 id="about-links-title">{copy.related.title}</h2></div><nav class="link-grid" aria-label={copy.related.ariaLabel}>{copy.links.map((link, index) => <a href={hrefFor(link.routeKey, `about.links[${index}].routeKey`)}>{link.label}</a>)}</nav></Container></section>
+  <section class="closing" aria-labelledby="about-cta-title"><Container><div class="closing__inner"><div><p class="eyebrow">{copy.cta.eyebrow}</p><h2 id="about-cta-title">{copy.cta.title}</h2></div><Button href={ctaHref} variant="secondary">{t(locale, primaryCta.labelKey)}</Button></div></Container></section>
+</BaseLayout>
+
+<style>
+  .hero,.section { padding-block: var(--section-gap); }
+  .hero { border-block-end: var(--hairline) solid var(--border); }
+  .hero__prose { margin-block-start: var(--space-6); color: var(--slate-700); }
+  .hero__prose :global(p) { margin: 0; font-size: var(--text-h3); }
+  h1 { max-inline-size: 20ch; }
+  .section--tinted,.closing { background: var(--surface-1); border-block: var(--hairline) solid var(--border); }
+  .section__heading { max-inline-size: var(--measure); }
+  .section__heading > p:last-child { margin-block-start: var(--space-4); color: var(--slate-700); }
+  .split { display: grid; gap: var(--space-12); }
+  .section__body { max-inline-size: var(--measure); color: var(--slate-700); }
+  .section__body p + p { margin-block-start: var(--space-6); }
+  .principles { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); margin: var(--space-12) 0 0; padding: 0; list-style: none; }
+  .principles li { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-4); padding-block-start: var(--space-6); border-block-start: var(--hairline) solid var(--border); }
+  .principles li > span { color: var(--action); }
+  .principles h3 { margin: 0; }
+  .principles p { margin-block-start: var(--space-3); color: var(--slate-700); }
+  .link-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); margin-block-start: var(--space-8); }
+  .link-grid a { min-block-size: var(--tap-min); padding: var(--space-4); border: var(--hairline) solid var(--border); background: var(--surface-0); color: var(--action); }
+  .closing { padding-block: var(--space-12); }
+  .closing__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-6); }
+  .closing h2 { max-inline-size: 28ch; }
+  @media (min-width: 48rem) { .split { grid-template-columns: repeat(2, minmax(0, 1fr)); } .principles,.link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 30rem) { .closing__inner { align-items: stretch; flex-direction: column; } .closing__inner :global(.btn) { inline-size: 100%; white-space: normal; } }
+</style>

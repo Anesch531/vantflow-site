@@ -1,0 +1,54 @@
+---
+/**
+ * BaseLayout — THE shell. Header / main / footer, lang + dir from the locale helper.
+ * Pages render inside it and never re-implement it (ARCHITECTURE §6 "Layout shell").
+ * No <script> anywhere: the site is content-only static HTML (T01 render model).
+ */
+import '@fontsource-variable/inter';
+import '@fontsource-variable/jetbrains-mono';
+import '../styles/global.css';
+
+import { dirFor, langTag, t, type Locale } from '../lib/i18n';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  locale: Locale;
+  /** <title>. Site name is appended automatically except on home. */
+  title: string;
+  description?: string;
+  noindex?: boolean;
+  /** Set true on the home route so <title> is the bare site name. */
+  isHome?: boolean;
+}
+
+const { locale, title, description = '', noindex = false, isHome = false } = Astro.props;
+const siteName = t(locale, 'site.name');
+const docTitle = isHome || title === siteName ? siteName : `${title} — ${siteName}`;
+---
+
+<!doctype html>
+<html lang={langTag[locale]} dir={dirFor(locale)}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{docTitle}</title>
+    {description && <meta name="description" content={description} />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t(locale, 'nav.skip')}</a>
+    <Header locale={locale} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>
+
+<style>
+  main:focus {
+    outline: none;
+  }
+</style>

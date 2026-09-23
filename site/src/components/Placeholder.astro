@@ -1,0 +1,70 @@
+---
+/**
+ * Placeholder — honest stand-in for a route whose page task has not run yet.
+ * Shows the route label as <h1>, the owning task and path in mono, and one link home.
+ * Removed from a page by the task that owns it; never shipped to search (noindex).
+ */
+import Container from './Container.astro';
+import Button from './Button.astro';
+import { localizePath, t, type Locale } from '../lib/i18n';
+import { route, type Route } from '../lib/routes';
+
+interface Props {
+  locale: Locale;
+  route: Route;
+}
+const { locale, route: r } = Astro.props;
+---
+
+<Container as="section" class="placeholder">
+  <p class="eyebrow">{t(locale, 'placeholder.eyebrow')}</p>
+  <h1>{t(locale, r.labelKey)}</h1>
+  <dl class="placeholder__meta mono">
+    <dt>{t(locale, 'placeholder.route')}</dt>
+    <dd>{r.path}</dd>
+    <dt>{t(locale, 'placeholder.owner')}</dt>
+    <dd>{r.task}</dd>
+  </dl>
+  <p class="prose">{t(locale, 'placeholder.body')}</p>
+  <Button href={localizePath(route('home').path, locale)} variant="secondary">
+    {t(locale, 'placeholder.home')}
+  </Button>
+</Container>
+
+<style>
+  .placeholder {
+    display: grid;
+    gap: var(--line-gap);
+    padding-block: var(--section-gap);
+  }
+
+  .placeholder :global(.eyebrow) {
+    margin: 0;
+  }
+
+  .placeholder__meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--space-1) var(--space-4);
+    margin: 0;
+    padding: var(--space-4);
+    max-inline-size: max-content;
+    background: var(--surface-2);
+    border: var(--hairline) solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-body);
+  }
+
+  .placeholder__meta dt {
+    color: var(--text-muted);
+  }
+
+  .placeholder__meta dd {
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  .placeholder :global(.btn) {
+    justify-self: start;
+  }
+</style>

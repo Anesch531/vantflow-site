@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Privacy / Phase 1",
+  "updated": "Last updated: 2026-09-23",
+  "sections": [
+    { "title": "Who we are", "body": "The controller is Cherif Taiba Mohammed Anis. Contact: anesch829@gmail.com or WhatsApp at +213 791 19 23 50 (https://wa.me/213791192350)." },
+    { "title": "What we collect", "body": "Only information you choose to send by WhatsApp or email: your name or contact details if provided, your message, and a site URL if you include one. There are no on-site forms, accounts, payment collection, or third-party form processors." },
+    { "title": "Why we use it", "body": "We use enquiry information to understand your request, reply to you, and discuss a possible audit or SEO engagement. Our lawful basis is legitimate interest in answering enquiries or taking requested steps before a contract." },
+    { "title": "How long we keep it", "body": "We keep WhatsApp and email enquiries for 12 months, then delete them unless a longer period is needed for a legal reason." },
+    { "title": "Cookies, analytics, and trackers", "body": "Phase 1 sets no cookies and uses no analytics or trackers. No cookie banner is needed while that remains true." },
+    { "title": "Sharing", "body": "We do not sell your data. We use the channel you chose, such as WhatsApp or email, as needed to answer your enquiry. We do not collect more information than that enquiry requires." },
+    { "title": "Your requests", "body": "You can ask what enquiry information we hold, or ask us to delete it, by emailing anesch829@gmail.com. EU visitors may use these access and deletion rights without needing to use legal terminology." }
+  ],
+  "related": { "title": "Questions or next step?", "ariaLabel": "Privacy related routes" },
+  "links": [
+    { "label": "See the audit offer", "routeKey": "seoAudit" },
+    { "label": "Contact VANTFLOW", "routeKey": "contact" },
+    { "label": "Read the terms", "routeKey": "terms" }
+  ]
+}

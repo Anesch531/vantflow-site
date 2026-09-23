@@ -1,0 +1,22 @@
+---
+/**
+ * PlaceholderPage — a full page for a route whose task has not run yet.
+ * Each src/pages file is one line: <PlaceholderPage routeKey="…" />.
+ * The owning task replaces the file's body with real content from the content layer.
+ */
+import BaseLayout from './BaseLayout.astro';
+import Placeholder from '../components/Placeholder.astro';
+import { localeFromPath, t } from '../lib/i18n';
+import { route, type RouteKey } from '../lib/routes';
+
+interface Props {
+  routeKey: RouteKey;
+}
+const { routeKey } = Astro.props;
+const r = route(routeKey);
+const locale = localeFromPath(Astro.url.pathname);
+---
+
+<BaseLayout locale={locale} title={t(locale, r.labelKey)} noindex isHome={routeKey === 'home'}>
+  <Placeholder locale={locale} route={r} />
+</BaseLayout>

@@ -1,0 +1,49 @@
+---
+/**
+ * 404 — GitHub Pages serves /404.html for any unknown path.
+ * The only T02 page with real copy, so it doubles as the content-file-contract example:
+ * its text comes from src/content/pages/en/not-found.md through the strict schema.
+ */
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/Container.astro';
+import Button from '../components/Button.astro';
+import { defaultLocale, localizePath, t } from '../lib/i18n';
+import { route } from '../lib/routes';
+
+// GitHub Pages serves one 404 for every locale until T13/T14 add localised ones.
+const locale = defaultLocale;
+const entry = await getEntry('pages', `${locale}/not-found`);
+if (!entry) throw new Error('Content contract: src/content/pages/en/not-found.md is missing');
+const { Content } = await render(entry);
+const fm = entry.data;
+---
+
+<BaseLayout locale={locale} title={fm.title} description={fm.description} noindex={fm.noindex}>
+  <Container as="section" class="not-found">
+    <p class="eyebrow mono">404</p>
+    <h1>{fm.title}</h1>
+    <div class="prose">
+      <Content />
+    </div>
+    <Button href={localizePath(route('home').path, locale)} variant="secondary">
+      {t(locale, 'placeholder.home')}
+    </Button>
+  </Container>
+</BaseLayout>
+
+<style>
+  .not-found {
+    display: grid;
+    gap: var(--line-gap);
+    padding-block: var(--section-gap);
+  }
+
+  .not-found :global(.eyebrow) {
+    margin: 0;
+  }
+
+  .not-found :global(.btn) {
+    justify-self: start;
+  }
+</style>

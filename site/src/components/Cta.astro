@@ -1,0 +1,19 @@
+---
+/**
+ * Cta — THE primary call to action (decision #18). Reads lib/cta.ts; never hard-codes.
+ * Header, hero and end-of-page CTAs all render this component.
+ */
+import Button from './Button.astro';
+import { primaryCta } from '../lib/cta';
+import { localizePath, t, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  class?: string;
+}
+const { locale, class: className = '' } = Astro.props;
+---
+
+<Button href={localizePath(primaryCta.route.path, locale)} variant="primary" class={className}>
+  {t(locale, primaryCta.labelKey)}
+</Button>

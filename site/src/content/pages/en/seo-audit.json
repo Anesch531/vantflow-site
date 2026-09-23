@@ -1,0 +1,64 @@
+{
+  "heroEyebrow": "Fixed-price SEO audit",
+  "offer": {
+    "introPrice": "$99",
+    "anchorLabel": "Normally",
+    "anchorPrice": "$149",
+    "priceAriaLabel": "Intro audit price 99 dollars, normally 149 dollars",
+    "rateNote": "The $99 founding rate is available during the introductory period.",
+    "action": "Start on WhatsApp",
+    "whatsAppHref": "https://wa.me/213791192350?text=Hi%20VANTFLOW%20%E2%80%94%20I%27d%20like%20to%20book%20the%20SEO%20audit."
+  },
+  "included": {
+    "eyebrow": "What you receive",
+    "title": "An evidence chain you can act on",
+    "intro": "The review is structured to support a decision, implementation, and a later check.",
+    "items": [
+      { "title": "Findings", "body": "Observed technical, on-page, content, or local-search issues with the evidence behind them." },
+      { "title": "Prioritized fixes", "body": "Recommended actions ordered by relevance and dependency, not an unexplained score." },
+      { "title": "A 45-minute walkthrough", "body": "A scheduled call where we go through the first three findings together, what they cost you, and what you can safely leave alone." },
+      { "title": "Verification steps", "body": "Checks that show whether each implemented fix produced the intended change." }
+    ]
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "From context to a reviewable plan",
+    "intro": "Timing depends on the site and the access needed. Scope and expected delivery are confirmed before the review starts.",
+    "items": [
+      { "number": "01", "title": "Share context", "body": "Send the website, the search problem you have noticed, and any market or platform constraints." },
+      { "number": "02", "title": "Review the evidence", "body": "VANTFLOW examines the relevant site and search signals, separating observed issues from open questions." },
+      { "number": "03", "title": "Receive the action path", "body": "You receive findings, prioritized fixes, and verification steps for the work that follows." },
+      { "number": "04", "title": "Walk through it together", "body": "We spend 45 minutes on the first three findings: which one costs you the most, who can act on it, and what you can safely ignore. You get the call whether or not any further work happens." }
+    ]
+  },
+  "fit": {
+    "eyebrow": "Who it is for",
+    "title": "Useful when the next SEO decision is unclear",
+    "body": "The audit fits teams that need a bounded diagnosis before committing to implementation or ongoing support.",
+    "items": [
+      "A site with visible search issues but no agreed priority",
+      "A planned redesign, migration, or content change that needs SEO review",
+      "An internal or agency team that needs an evidence-backed implementation brief"
+    ]
+  },
+  "next": {
+    "eyebrow": "What happens next",
+    "title": "Start with the site and the question",
+    "body": "WhatsApp opens a prepared message. Add your website and relevant context; no account, form, or payment step is required.",
+    "credit": "If you continue with a retainer scoped after the audit, the audit fee is credited to the first retainer month."
+  },
+  "links": [
+    { "label": "Review pricing", "routeKey": "pricing" },
+    { "label": "Explore VANTFLOW services", "routeKey": "services" },
+    { "label": "Use another contact channel", "routeKey": "contact" }
+  ],
+  "related": {
+    "eyebrow": "Related routes",
+    "title": "Review scope or choose another starting point",
+    "ariaLabel": "Related VANTFLOW routes"
+  },
+  "cta": {
+    "eyebrow": "Defined first step",
+    "title": "Book the audit at the introductory rate"
+  }
+}

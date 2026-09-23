@@ -1,0 +1,46 @@
+{
+  "heroEyebrow": "Content SEO",
+  "problem": {
+    "eyebrow": "The content constraint",
+    "title": "Publishing more does not answer the right questions",
+    "body": "Content becomes difficult to manage when topics overlap, pages lack a defined audience, or useful evidence is buried under broad language. Search visibility needs a connected editorial system, not a larger pile of pages."
+  },
+  "method": {
+    "eyebrow": "The content method",
+    "title": "Plan useful coverage around real audience questions",
+    "intro": "The work connects demand, expertise, page purpose, and distribution so each content decision has a reason to exist.",
+    "steps": [
+      { "number": "01", "title": "Audience questions", "body": "Group the questions, decisions, and objections that matter to the audience, then distinguish a useful topic from a superficial keyword variation." },
+      { "number": "02", "title": "Topic architecture", "body": "Assign topics to hubs, supporting pages, and existing URLs so coverage grows without creating avoidable overlap or orphaned work." },
+      { "number": "03", "title": "Evidence and usefulness", "body": "Set expectations for first-hand detail, sources, examples, structure, and editorial review before a page is drafted or refreshed." },
+      { "number": "04", "title": "Search and AI discovery", "body": "Structure clear answers and supporting context so content is easier to interpret across conventional search and AI-search surfaces, without treating GEO as a separate service." }
+    ]
+  },
+  "outcome": {
+    "eyebrow": "The content outcome",
+    "title": "A content roadmap with a reason behind every page",
+    "body": "The roadmap gives writers, editors, and site owners a shared basis for deciding what to create, improve, connect, and eventually retire.",
+    "points": [
+      "Topics tied to audience needs and business priorities",
+      "Clear relationships between hub and supporting pages",
+      "Editorial requirements that protect usefulness and trust",
+      "Content structured for clear answers and supporting context"
+    ]
+  },
+  "links": [
+    { "label": "Explore all SEO services", "routeKey": "services" },
+    { "label": "Align pages with on-page SEO services", "routeKey": "onPageSeo" },
+    { "label": "Support local discovery with local SEO services", "routeKey": "localSeo" },
+    { "label": "Start with an SEO audit", "routeKey": "seoAudit" },
+    { "label": "See our SEO work approach", "routeKey": "work" }
+  ],
+  "related": {
+    "eyebrow": "Related routes",
+    "title": "Choose the next content decision",
+    "ariaLabel": "Related content SEO routes"
+  },
+  "cta": {
+    "eyebrow": "Next step",
+    "title": "Discuss the content questions your site should answer"
+  }
+}

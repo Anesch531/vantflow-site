@@ -1,0 +1,35 @@
+---
+/** Wordmark — typographic only, no symbol (decision #20; DESIGN.md §4). */
+import { localizePath, t, type Locale } from '../lib/i18n';
+import { route } from '../lib/routes';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<a class="wordmark" href={localizePath(route('home').path, locale)} aria-label={t(locale, 'site.name')}>
+  {t(locale, 'site.name')}
+</a>
+
+<style>
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    block-size: var(--tap-min);
+    font-family: var(--font-sans);
+    font-weight: var(--weight-heading);
+    font-size: var(--wordmark-height);
+    line-height: 1;
+    letter-spacing: var(--wordmark-tracking);
+    text-transform: uppercase;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .wordmark:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+</style>

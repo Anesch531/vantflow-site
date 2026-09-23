@@ -1,0 +1,40 @@
+{
+  "heroEyebrow": "VANTFLOW pricing",
+  "audit": {
+    "eyebrow": "Fixed-price starting point",
+    "title": "SEO audit at the founding rate",
+    "body": "A bounded review that connects each finding to a recommended fix and a way to verify the result.",
+    "introPrice": "$99",
+    "anchorLabel": "Normally",
+    "anchorPrice": "$149",
+    "priceAriaLabel": "Intro audit price 99 dollars, normally 149 dollars",
+    "rateNote": "The $99 founding rate is available during the introductory period.",
+    "items": [
+      { "title": "Findings", "body": "Observed technical, on-page, content, or local-search issues with the evidence behind them." },
+      { "title": "Prioritized fixes", "body": "Recommended actions ordered by relevance and dependency, not an unexplained score." },
+      { "title": "Verification steps", "body": "Checks that show whether each implemented fix produced the intended change." }
+    ]
+  },
+  "next": {
+    "eyebrow": "After the audit",
+    "title": "Scope continuing work from the evidence",
+    "body": "Retainers are available when ongoing implementation or review is useful. Scope is agreed after the audit, once the work is known.",
+    "credit": "If you continue with a retainer, the audit fee is credited to the first retainer month.",
+    "partner": "Agency and white-label engagements follow a separate partner discussion. Partner rates are not published.",
+    "ladder": "The audit produces a written report and a 45-minute walkthrough. From there, there are three honest paths: implement the fixes yourself, take a fixed-scope repair engagement, or move to monthly delivery. All three are priced in writing after the audit, when the work is actually known."
+  },
+  "links": [
+    { "label": "Explore VANTFLOW services", "routeKey": "services" },
+    { "label": "Review the white-label partner approach", "routeKey": "whiteLabelSeo" },
+    { "label": "Contact VANTFLOW", "routeKey": "contact" }
+  ],
+  "related": {
+    "eyebrow": "Related routes",
+    "title": "Compare the available next steps",
+    "ariaLabel": "Related VANTFLOW routes"
+  },
+  "cta": {
+    "eyebrow": "Start with evidence",
+    "title": "Book the fixed-price audit"
+  }
+}

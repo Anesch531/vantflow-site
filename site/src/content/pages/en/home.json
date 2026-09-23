@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "eyebrow": "Evidence-led SEO delivery",
+    "supportingLine": "For agency partners and search-dependent businesses across MENA and North Africa.",
+    "primaryLink": {
+      "label": "See the audit offer",
+      "routeKey": "seoAudit"
+    },
+    "secondaryLink": {
+      "label": "Explore services",
+      "routeKey": "services"
+    }
+  },
+  "method": {
+    "eyebrow": "A visible method",
+    "title": "From evidence to a checked fix",
+    "intro": "SEO work should be reviewable. Each recommendation connects what we found to why it matters, what should change, and how the result will be checked.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Evidence",
+        "body": "Start with the page, crawl, search result, or business constraint that shows the issue."
+      },
+      {
+        "number": "02",
+        "title": "Reason",
+        "body": "Explain the effect on discovery, understanding, trust, or conversion before proposing work."
+      },
+      {
+        "number": "03",
+        "title": "Action",
+        "body": "Define a bounded change that an owner, partner, or developer can review before it ships."
+      },
+      {
+        "number": "04",
+        "title": "Verification",
+        "body": "Recheck the same signal after the change and record what improved, what did not, and what comes next."
+      }
+    ],
+    "example": {
+      "label": "Illustrative finding — not a client result",
+      "status": "Needs review",
+      "signal": "Several important pages are not linked from a clear service path.",
+      "reason": "Search engines and visitors may struggle to understand which pages matter and how the offer fits together.",
+      "action": "Define one route and one intent per page, then add contextual internal links.",
+      "verification": "Crawl the updated site and confirm every priority page is reachable through the intended path."
+    }
+  },
+  "offer": {
+    "eyebrow": "Low-risk starting point",
+    "title": "Start with a paid SEO audit",
+    "body": "Agree the scope first. The audit turns observed issues into a prioritised plan, with a reason and a verification step attached to each recommendation. Price, timing, and deliverables are confirmed before work begins.",
+    "points": [
+      "A defined scope instead of an open-ended engagement",
+      "Findings written for decision-makers and implementers",
+      "A clear route from audit to pilot or ongoing delivery"
+    ],
+    "link": {
+      "label": "Review the audit route",
+      "routeKey": "seoAudit"
+    }
+  },
+  "verticals": {
+    "eyebrow": "Focused contexts",
+    "title": "Built around how each market is found",
+    "intro": "The method stays consistent. The search journey, constraints, and commercial action change by market.",
+    "items": [
+      {
+        "label": "Dubai property",
+        "title": "Search visibility for a high-consideration local market",
+        "body": "Connect technical foundations, location signals, service intent, and enquiry paths for property businesses competing across areas and languages.",
+        "linkLabel": "View the Dubai property focus",
+        "routeKey": "dubaiProperty"
+      },
+      {
+        "label": "Algerian e-commerce",
+        "title": "Search structure for catalogue and category growth",
+        "body": "Shape crawlable catalogue paths, useful category pages, and content priorities around how Algerian buyers discover products.",
+        "linkLabel": "View the Algerian e-commerce focus",
+        "routeKey": "algerianEcommerce"
+      }
+    ]
+  },
+  "partner": {
+    "eyebrow": "For agency partners",
+    "title": "Add SEO delivery without hiding the work",
+    "body": "VANTFLOW can work behind your brand while keeping the method visible to your team: scoped work, documented reasons, review points, and verification before reporting.",
+    "points": [
+      "White-label delivery that respects the client relationship",
+      "Clear handoffs for strategy, content, design, and development teams",
+      "English, French, and Arabic delivery planned as reviewed work — not machine-published copy"
+    ],
+    "link": {
+      "label": "Explore white-label SEO",
+      "routeKey": "whiteLabelSeo"
+    }
+  }
+}

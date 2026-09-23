@@ -1,0 +1,223 @@
+---
+/**
+ * Nav — renders lib/nav.ts. No JS: the single dropdown is a <details>.
+ * Used once, by Header. Never hand-write links here; edit nav.ts / routes.ts instead.
+ */
+import { primaryNav } from '../lib/nav';
+import { localizePath, t, type Locale } from '../lib/i18n';
+import type { Route } from '../lib/routes';
+
+interface Props {
+  locale: Locale;
+  /** Current pathname (Astro.url.pathname) for aria-current. */
+  currentPath: string;
+}
+const { locale, currentPath } = Astro.props;
+
+const norm = (p: string) => p.replace(/\.html$/, '').replace(/\/+$/, '') || '/';
+const isCurrent = (r: Route) => norm(localizePath(r.path, locale)) === norm(currentPath);
+const href = (r: Route) => localizePath(r.path, locale);
+---
+
+<nav class="nav" aria-label={t(locale, 'nav.primary')}>
+  <ul class="nav__list" role="list">
+    {
+      primaryNav.map((item) =>
+        item.kind === 'link' ? (
+          <li class="nav__item">
+            <a
+              class="nav__link"
+              href={href(item.route)}
+              aria-current={isCurrent(item.route) ? 'page' : undefined}
+            >
+              {t(locale, item.route.labelKey)}
+            </a>
+          </li>
+        ) : (
+          <li class="nav__item nav__item--group">
+            <details class="dropdown">
+              <summary class="nav__link dropdown__summary">
+                {t(locale, item.labelKey)}
+                <svg class="dropdown__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+                  <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </summary>
+              <div class="dropdown__panel">
+                {item.sections.map((section) => (
+                  <section class="dropdown__section">
+                    <p class="eyebrow dropdown__heading">
+                      {section.index ? (
+                        <a class="dropdown__heading-link" href={href(section.index)}>
+                          {t(locale, section.labelKey)}
+                        </a>
+                      ) : (
+                        t(locale, section.labelKey)
+                      )}
+                    </p>
+                    <ul role="list" class="dropdown__list">
+                      {section.items.map((r) => (
+                        <li>
+                          <a
+                            class="dropdown__link"
+                            href={href(r)}
+                            aria-current={isCurrent(r) ? 'page' : undefined}
+                          >
+                            {t(locale, r.labelKey)}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                ))}
+              </div>
+            </details>
+          </li>
+        ),
+      )
+    }
+  </ul>
+</nav>
+
+<style>
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav__item--group {
+    position: relative;
+  }
+
+  .nav__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-3);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-small);
+    font-weight: var(--weight-ui);
+    color: var(--text-body);
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      color var(--motion-fast),
+      background-color var(--motion-fast);
+  }
+
+  .nav__link:hover {
+    color: var(--text-primary);
+    background: var(--surface-1);
+    text-decoration: none;
+  }
+
+  .nav__link[aria-current='page'] {
+    color: var(--text-primary);
+    box-shadow: inset 0 calc(-1 * var(--focus-width)) 0 var(--action);
+    border-radius: 0;
+  }
+
+  /* <details> as dropdown — no JS */
+  .dropdown__summary {
+    list-style: none;
+  }
+
+  .dropdown__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .dropdown__chevron {
+    transition: transform var(--motion-fast);
+  }
+
+  .dropdown[open] .dropdown__chevron {
+    transform: rotate(180deg);
+  }
+
+  .dropdown__panel {
+    position: absolute;
+    inset-block-start: calc(100% + var(--space-2));
+    inset-inline-start: 0;
+    z-index: 50;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: var(--space-6);
+    min-inline-size: 20rem;
+    padding: var(--space-4);
+    background: var(--surface-0);
+    border: var(--hairline) solid var(--border);
+    border-radius: var(--radius-md);
+  }
+
+  .dropdown__section {
+    min-inline-size: 10rem;
+  }
+
+  .dropdown__heading {
+    margin-block: 0 var(--space-2);
+    padding-inline: var(--space-2);
+  }
+
+  .dropdown__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .dropdown__link {
+    display: flex;
+    align-items: center;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-small);
+    color: var(--text-body);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .dropdown__link:hover {
+    color: var(--text-primary);
+    background: var(--surface-1);
+    text-decoration: none;
+  }
+
+  .dropdown__link[aria-current='page'] {
+    color: var(--action);
+    background: var(--action-tint);
+  }
+
+  /* Below 1024px the header stacks; the nav wraps (never overflows the viewport) and the
+     panel spans the header width. A hamburger would need JS, which the site does not ship. */
+  @media (max-width: 63.99rem) {
+    .nav__list {
+      flex-wrap: wrap;
+      margin-inline-start: calc(-1 * var(--space-3));
+    }
+
+    .nav__item--group {
+      position: static;
+    }
+
+    .dropdown__panel {
+      inset-inline: 0;
+      inset-block-start: 100%;
+      grid-template-columns: 1fr;
+      min-inline-size: 0;
+      margin-inline: var(--gutter);
+    }
+  }
+
+  .dropdown__heading-link {
+    color: inherit;
+  }
+
+  .dropdown__heading-link:hover {
+    color: var(--text-primary);
+  }
+</style>

@@ -1,0 +1,46 @@
+{
+  "heroEyebrow": "On-page SEO",
+  "problem": {
+    "eyebrow": "The page constraint",
+    "title": "Pages lose focus when every element tells a different story",
+    "body": "A page may target several needs, bury its useful answer, repeat another URL, or leave visitors without a logical next step. Small edits made in isolation rarely resolve that mismatch."
+  },
+  "method": {
+    "eyebrow": "The on-page method",
+    "title": "Give every existing page a defined job",
+    "intro": "The work starts with search intent and page purpose, then aligns the elements that help people and search engines interpret the page.",
+    "steps": [
+      { "number": "01", "title": "Intent and role", "body": "Define the primary search need, audience, conversion role, and relationship to nearby pages before recommending edits." },
+      { "number": "02", "title": "Titles and headings", "body": "Align the title, description, H1, and heading sequence with the page purpose without forcing repetitive phrasing." },
+      { "number": "03", "title": "Coverage and clarity", "body": "Identify missing answers, unclear sections, and unsupported claims within existing copy, then specify the revisions needed." },
+      { "number": "04", "title": "Internal pathways", "body": "Improve contextual links and calls to action so readers can move to the next relevant page and important URLs gain useful context." }
+    ]
+  },
+  "outcome": {
+    "eyebrow": "The page outcome",
+    "title": "A page system with less overlap and clearer intent",
+    "body": "Each recommendation explains what should change, why it matters, and which existing page owns the topic. New content production remains a separate content SEO scope.",
+    "points": [
+      "Defined search intent and business role per page",
+      "Titles, headings, and snippets aligned to that role",
+      "Revision notes for clarity and topic coverage",
+      "Internal links that reinforce page relationships"
+    ]
+  },
+  "links": [
+    { "label": "Explore all SEO services", "routeKey": "services" },
+    { "label": "Resolve systems with technical SEO services", "routeKey": "technicalSeo" },
+    { "label": "Commission content SEO services", "routeKey": "contentGeo" },
+    { "label": "Start with an SEO audit", "routeKey": "seoAudit" },
+    { "label": "See our SEO work approach", "routeKey": "work" }
+  ],
+  "related": {
+    "eyebrow": "Related routes",
+    "title": "Continue with the right page scope",
+    "ariaLabel": "Related on-page SEO routes"
+  },
+  "cta": {
+    "eyebrow": "Next step",
+    "title": "Discuss the pages that need a clearer purpose"
+  }
+}

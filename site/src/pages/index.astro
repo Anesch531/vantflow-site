@@ -1,0 +1,566 @@
+---
+import { getEntry, render } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/Container.astro';
+import Button from '../components/Button.astro';
+import { primaryCta } from '../lib/cta';
+import { localizePath, t, type Locale } from '../lib/i18n';
+import { route, routeKeys, type RouteKey } from '../lib/routes';
+import homeCopy from '../content/pages/en/home.json';
+
+const locale: Locale = 'en';
+const entry = await getEntry('pages', 'en/home');
+
+if (!entry) {
+  throw new Error('T03: missing content entry pages/en/home');
+}
+
+function assertContentTree(value: unknown, path = 'home'): void {
+  if (typeof value === 'string') {
+    if (!value.trim()) throw new Error(`T03: empty copy value at ${path}`);
+    return;
+  }
+
+  if (Array.isArray(value)) {
+    if (value.length === 0) throw new Error(`T03: empty copy array at ${path}`);
+    value.forEach((item, index) => assertContentTree(item, `${path}[${index}]`));
+    return;
+  }
+
+  if (value && typeof value === 'object') {
+    const entries = Object.entries(value);
+    if (entries.length === 0) throw new Error(`T03: empty copy object at ${path}`);
+    entries.forEach(([key, child]) => assertContentTree(child, `${path}.${key}`));
+    return;
+  }
+
+  throw new Error(`T03: unsupported copy value at ${path}`);
+}
+
+function hrefFor(value: string, path: string): string {
+  if (!routeKeys.includes(value as RouteKey)) {
+    throw new Error(`T03: invalid route key "${value}" at ${path}`);
+  }
+
+  return localizePath(route(value as RouteKey).path, locale);
+}
+
+assertContentTree(homeCopy);
+
+const heroPrimaryHref = hrefFor(homeCopy.hero.primaryLink.routeKey, 'home.hero.primaryLink.routeKey');
+const heroSecondaryHref = hrefFor(homeCopy.hero.secondaryLink.routeKey, 'home.hero.secondaryLink.routeKey');
+const offerHref = hrefFor(homeCopy.offer.link.routeKey, 'home.offer.link.routeKey');
+const partnerHref = hrefFor(homeCopy.partner.link.routeKey, 'home.partner.link.routeKey');
+const verticalHrefs = homeCopy.verticals.items.map((item, index) =>
+  hrefFor(item.routeKey, `home.verticals.items[${index}].routeKey`),
+);
+const headerCtaHref = localizePath(primaryCta.route.path, locale);
+const { Content } = await render(entry);
+---
+
+<BaseLayout
+  locale={locale}
+  title={entry.data.title}
+  description={entry.data.description}
+  noindex={entry.data.noindex}
+  isHome
+>
+  <section class="hero" aria-labelledby="home-title">
+    <Container>
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow hero__eyebrow">{homeCopy.hero.eyebrow}</p>
+          <h1 id="home-title">{entry.data.title}</h1>
+          <div class="hero__prose prose">
+            <Content />
+          </div>
+          <div class="hero__actions" aria-label="Homepage actions">
+            <Button href={heroPrimaryHref} variant="secondary">
+              {t(locale, primaryCta.labelKey)}
+            </Button>
+            <Button href={heroSecondaryHref} variant="link">
+              {homeCopy.hero.secondaryLink.label}
+            </Button>
+          </div>
+          <p class="hero__context">{homeCopy.hero.supportingLine}</p>
+        </div>
+
+        <aside class="hero__method" aria-label="VANTFLOW working principle">
+          <p class="eyebrow">Working principle</p>
+          <ol>
+            {homeCopy.method.steps.map((step) => (
+              <li>
+                <span class="mono">{step.number}</span>
+                <span>{step.title}</span>
+              </li>
+            ))}
+          </ol>
+          <p>
+            The same chain stays visible from the first finding to the final check.
+          </p>
+        </aside>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section section--tinted" aria-labelledby="method-title">
+    <Container>
+      <div class="section__heading">
+        <p class="eyebrow">{homeCopy.method.eyebrow}</p>
+        <h2 id="method-title">{homeCopy.method.title}</h2>
+        <p>{homeCopy.method.intro}</p>
+      </div>
+
+      <ol class="method-grid">
+        {homeCopy.method.steps.map((step) => (
+          <li class="method-card">
+            <span class="mono method-card__number">{step.number}</span>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+          </li>
+        ))}
+      </ol>
+
+      <article class="finding" aria-labelledby="finding-title">
+        <div class="finding__meta mono">
+          <span id="finding-title">{homeCopy.method.example.label}</span>
+          <span>{homeCopy.method.example.status}</span>
+        </div>
+        <dl>
+          <div>
+            <dt>Signal</dt>
+            <dd>{homeCopy.method.example.signal}</dd>
+          </div>
+          <div>
+            <dt>Reason</dt>
+            <dd>{homeCopy.method.example.reason}</dd>
+          </div>
+          <div>
+            <dt>Action</dt>
+            <dd>{homeCopy.method.example.action}</dd>
+          </div>
+          <div>
+            <dt>Verification</dt>
+            <dd>{homeCopy.method.example.verification}</dd>
+          </div>
+        </dl>
+      </article>
+    </Container>
+  </section>
+
+  <section class="section" aria-labelledby="offer-title">
+    <Container>
+      <div class="split">
+        <div class="section__heading split__heading">
+          <p class="eyebrow">{homeCopy.offer.eyebrow}</p>
+          <h2 id="offer-title">{homeCopy.offer.title}</h2>
+          <p>{homeCopy.offer.body}</p>
+          <Button href={offerHref} variant="link" mono>
+            {homeCopy.offer.link.label}
+          </Button>
+        </div>
+        <ul class="check-list">
+          {homeCopy.offer.points.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section section--tinted" aria-labelledby="verticals-title">
+    <Container>
+      <div class="section__heading">
+        <p class="eyebrow">{homeCopy.verticals.eyebrow}</p>
+        <h2 id="verticals-title">{homeCopy.verticals.title}</h2>
+        <p>{homeCopy.verticals.intro}</p>
+      </div>
+
+      <div class="vertical-grid">
+        {homeCopy.verticals.items.map((item, index) => (
+          <article class="vertical-card">
+            <p class="eyebrow">{item.label}</p>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+            <Button href={verticalHrefs[index]} variant="link" mono>
+              {item.linkLabel}
+            </Button>
+          </article>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <section class="section" aria-labelledby="partner-title">
+    <Container>
+      <div class="partner">
+        <div class="section__heading partner__heading">
+          <p class="eyebrow">{homeCopy.partner.eyebrow}</p>
+          <h2 id="partner-title">{homeCopy.partner.title}</h2>
+          <p>{homeCopy.partner.body}</p>
+        </div>
+        <div class="partner__details">
+          <ul class="check-list">
+            {homeCopy.partner.points.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+          <Button href={partnerHref} variant="secondary">
+            {homeCopy.partner.link.label}
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="closing" aria-labelledby="closing-title">
+    <Container>
+      <div class="closing__inner">
+        <div>
+          <p class="eyebrow">Next step</p>
+          <h2 id="closing-title">Begin with a scope you can review</h2>
+        </div>
+        <Button href={headerCtaHref} variant="secondary">
+          {t(locale, primaryCta.labelKey)}
+        </Button>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: var(--section-gap);
+    border-block-end: var(--hairline) solid var(--border);
+  }
+
+  .hero__grid {
+    display: grid;
+    gap: var(--space-12);
+  }
+
+  .hero__copy {
+    max-inline-size: var(--measure);
+  }
+
+  .hero__eyebrow,
+  .section__heading > .eyebrow,
+  .vertical-card > .eyebrow,
+  .partner__heading > .eyebrow,
+  .closing .eyebrow {
+    color: var(--text-primary);
+    margin-block-end: var(--space-4);
+  }
+
+  h1 {
+    font-size: var(--text-display);
+    line-height: var(--lh-display);
+    letter-spacing: var(--ls-display);
+    max-inline-size: 12ch;
+  }
+
+  .hero__prose {
+    margin-block-start: var(--space-6);
+    color: var(--slate-700);
+  }
+
+  .hero__prose :global(p) {
+    margin: 0;
+    font-size: var(--text-h3);
+    line-height: var(--lh-body);
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+    margin-block-start: var(--space-8);
+  }
+
+  .hero__context {
+    margin-block: var(--space-6) 0;
+    color: var(--slate-700);
+    font-size: var(--text-small);
+    max-inline-size: var(--measure);
+  }
+
+  .hero__method {
+    align-self: end;
+    padding: var(--space-6);
+    border: var(--hairline) solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-1);
+  }
+
+  .hero__method ol {
+    list-style: none;
+    margin: var(--space-6) 0;
+    padding: 0;
+    border-block-start: var(--hairline) solid var(--border);
+  }
+
+  .hero__method li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-4);
+    padding-block: var(--space-3);
+    border-block-end: var(--hairline) solid var(--border);
+    color: var(--text-primary);
+    font-weight: var(--weight-ui);
+  }
+
+  .hero__method li .mono {
+    color: var(--action);
+  }
+
+  .hero__method > p:last-child {
+    margin: 0;
+    color: var(--slate-700);
+    font-size: var(--text-small);
+  }
+
+  .section {
+    padding-block: var(--section-gap);
+  }
+
+  .section--tinted {
+    background: var(--surface-1);
+    border-block: var(--hairline) solid var(--border);
+  }
+
+  .section__heading {
+    max-inline-size: var(--measure);
+  }
+
+  .section__heading h2 + p {
+    margin-block: var(--space-4) 0;
+    color: var(--slate-700);
+  }
+
+  .method-grid {
+    display: grid;
+    list-style: none;
+    margin: var(--space-12) 0 0;
+    padding: 0;
+    border-block-start: var(--hairline) solid var(--border);
+  }
+
+  .method-card {
+    padding-block: var(--space-6);
+    border-block-end: var(--hairline) solid var(--border);
+  }
+
+  .method-card__number {
+    display: block;
+    margin-block-end: var(--space-4);
+    color: var(--action);
+  }
+
+  .method-card p,
+  .vertical-card p,
+  .partner__details {
+    color: var(--slate-700);
+  }
+
+  .method-card p {
+    margin-block: var(--space-3) 0;
+  }
+
+  .finding {
+    margin-block-start: var(--space-12);
+    padding: var(--space-6);
+    background: var(--surface-2);
+    border: var(--hairline) solid var(--border);
+    border-inline-start: var(--space-1) solid var(--warn);
+    border-radius: var(--radius-sm);
+  }
+
+  .finding__meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-6);
+    color: var(--text-primary);
+  }
+
+  .finding dl {
+    display: grid;
+    gap: var(--space-4);
+    margin: var(--space-6) 0 0;
+  }
+
+  .finding dl > div {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .finding dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-mono-sm);
+    line-height: var(--lh-mono-sm);
+    letter-spacing: var(--ls-mono-sm);
+    text-transform: uppercase;
+    color: var(--text-primary);
+  }
+
+  .finding dd {
+    margin: 0;
+    color: var(--slate-700);
+  }
+
+  .split,
+  .partner {
+    display: grid;
+    gap: var(--space-12);
+  }
+
+  .split__heading :global(.btn),
+  .partner__details :global(.btn) {
+    margin-block-start: var(--space-4);
+  }
+
+  .check-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-block-start: var(--hairline) solid var(--border);
+  }
+
+  .check-list li {
+    position: relative;
+    padding-block: var(--space-4);
+    padding-inline-start: var(--space-8);
+    border-block-end: var(--hairline) solid var(--border);
+  }
+
+  .check-list li::before {
+    content: '—';
+    position: absolute;
+    inset-inline-start: 0;
+    color: var(--action);
+    font-family: var(--font-mono);
+  }
+
+  .vertical-grid {
+    display: grid;
+    /* Explicit minmax(0, 1fr) rather than an implicit `auto` track: an auto track is
+       sized by max-content and can exceed the container at narrow widths, pushing the
+       card past the viewport (measured: 42px overflow at 320px). minmax(0, 1fr) clamps
+       the track so long content wraps instead of overflowing. */
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+    margin-block-start: var(--space-12);
+  }
+
+  .vertical-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+    background: var(--surface-0);
+    border: var(--hairline) solid var(--border);
+    border-radius: var(--radius-md);
+  }
+
+  .vertical-card h3 {
+    max-inline-size: 28ch;
+  }
+
+  .vertical-card h3 + p {
+    margin-block: var(--space-4) var(--space-6);
+  }
+
+  .vertical-card :global(.btn) {
+    align-self: flex-start;
+    margin-block-start: auto;
+    /* Button.astro is a frozen shared component and sets `white-space: nowrap` on every
+       .btn. These link labels are long and mono-spaced, so the nowrap floor is wider than
+       a narrow viewport (measured: 288px label → 17px overflow at 320px, 57px at 280px).
+       Allow wrapping here rather than editing the shared component. */
+    white-space: normal;
+  }
+
+  .partner {
+    padding: var(--space-8);
+    border: var(--hairline) solid var(--border);
+    border-radius: var(--radius-md);
+  }
+
+  .partner__details :global(.btn) {
+    display: inline-flex;
+  }
+
+  .closing {
+    padding-block: var(--space-12);
+    background: var(--surface-2);
+    border-block-start: var(--hairline) solid var(--border);
+  }
+
+  .closing__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
+  .closing h2 {
+    max-inline-size: 28ch;
+  }
+
+  @media (min-width: 48rem) {
+    .hero__grid {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 3fr);
+      align-items: end;
+    }
+
+    .method-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-inline-start: var(--hairline) solid var(--border);
+    }
+
+    .method-card {
+      padding: var(--space-6);
+      border-inline-end: var(--hairline) solid var(--border);
+    }
+
+    .finding dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .split,
+    .partner {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: start;
+    }
+
+    .vertical-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .method-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 30rem) {
+    .hero__actions,
+    .closing__inner {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .hero__actions :global(.btn),
+    .closing__inner :global(.btn) {
+      inline-size: 100%;
+    }
+
+    .finding,
+    .partner {
+      padding: var(--space-4);
+    }
+  }
+</style>

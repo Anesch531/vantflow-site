@@ -1,0 +1,41 @@
+{
+  "heroEyebrow": "About VANTFLOW",
+  "practice": {
+    "eyebrow": "The practice",
+    "title": "SEO consulting built around decisions people can inspect",
+    "body": "VANTFLOW approaches SEO as a chain of accountable decisions. Findings need context, recommendations need a reason, and completed work needs a check. That keeps advice useful to the people who must approve, implement, or maintain it.",
+    "history": "The phrase “Copilot, not autopilot” belongs to the brand’s history: a reminder that tools can support judgement, but should not replace review or ownership."
+  },
+  "principles": {
+    "eyebrow": "Guiding principles",
+    "title": "Evidence, reason, action, verification",
+    "intro": "Each stage answers a different question. Skipping one makes the recommendation harder to trust or maintain.",
+    "items": [
+      { "number": "01", "title": "Evidence", "body": "Start with observable search, site, content, or business signals. Separate what is known from what still needs investigation." },
+      { "number": "02", "title": "Reason", "body": "Explain why the evidence matters, which constraint it reveals, and how it affects a priority rather than presenting an unexplained score." },
+      { "number": "03", "title": "Action", "body": "Translate the reasoning into a bounded next step with enough context for the person responsible for implementation." },
+      { "number": "04", "title": "Verification", "body": "Return to the original evidence after implementation. Confirm the intended change, record what remains, and revise the next action when needed." }
+    ]
+  },
+  "delivery": {
+    "eyebrow": "Language and review",
+    "title": "English first, with reviewed French and Arabic planned",
+    "body": "The current site and delivery material launch in English. French and Arabic are part of the planned delivery range, but those versions will only publish after human review.",
+    "review": "This is a quality boundary, not a claim that the locales are already live. Meaning, terminology, and directionality need review before translated work represents the brand."
+  },
+  "links": [
+    { "label": "Explore VANTFLOW services", "routeKey": "services" },
+    { "label": "Review the white-label partner approach", "routeKey": "whiteLabelSeo" },
+    { "label": "See the fixed-price SEO audit", "routeKey": "seoAudit" },
+    { "label": "Contact VANTFLOW", "routeKey": "contact" }
+  ],
+  "related": {
+    "eyebrow": "Related routes",
+    "title": "Understand the work and choose a next step",
+    "ariaLabel": "Related VANTFLOW routes"
+  },
+  "cta": {
+    "eyebrow": "A defined starting point",
+    "title": "Start with evidence before choosing the work"
+  }
+}
