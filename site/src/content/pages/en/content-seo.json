@@ -27,6 +27,15 @@
       "Content structured for clear answers and supporting context"
     ]
   },
+  "faq": {
+    "title": "Common content SEO questions",
+    "items": [
+      { "question": "Does content SEO mean publishing more pages?", "answer": "No. The plan may recommend improving, combining, connecting or retiring existing pages before commissioning anything new." },
+      { "question": "How are topics selected?", "answer": "Topics must connect audience questions, available expertise, search evidence, page purpose and a useful next action. A keyword variation alone is not sufficient." },
+      { "question": "Is GEO a separate service?", "answer": "No. Clear answers, sound structure, evidence and supporting context help both conventional search and AI discovery, so GEO is treated as part of content quality." },
+      { "question": "Who can use the roadmap?", "answer": "Writers, editors, subject experts and site owners receive shared page roles and editorial requirements for drafting, review and later improvement." }
+    ]
+  },
   "links": [
     { "label": "Explore all SEO services", "routeKey": "services" },
     { "label": "Align pages with on-page SEO services", "routeKey": "onPageSeo" },

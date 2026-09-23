@@ -15,7 +15,7 @@ function hrefFor(value: string, path: string): string { if (!routeKeys.includes(
 const { Content } = await render(entry);
 const ctaHref = localizePath(primaryCta.route.path, locale);
 ---
-<BaseLayout locale={locale} title={entry.data.title} description={entry.data.description} noindex={entry.data.noindex} schemaType={entry.data.schemaType}>
+<BaseLayout locale={locale} title={entry.data.title} description={entry.data.description} noindex={entry.data.noindex} schemaType={entry.data.schemaType} ogImage="/og-work.png">
   <section class="hero" aria-labelledby="work-title"><Container><p class="eyebrow">{copy.heroEyebrow}</p><h1 id="work-title">{entry.data.title}</h1><div class="prose hero__prose lead"><Content /></div><p class="refresh mono">{copy.refresh}</p></Container></section>
   <section class="section" aria-labelledby="context-title"><Container><div class="split"><div><p class="eyebrow">{copy.context.eyebrow}</p><h2 id="context-title">{copy.context.title}</h2></div><p class="body">{copy.context.body}</p></div></Container></section>
   <section class="section tinted" aria-labelledby="method-title"><Container><p class="eyebrow">{copy.method.eyebrow}</p><h2 id="method-title">{copy.method.title}</h2><ol class="steps">{copy.method.steps.map((step, index) => <li><span class="mono">0{index + 1}</span><div><h3>{step.title}</h3><p>{step.body}</p></div></li>)}</ol></Container></section>

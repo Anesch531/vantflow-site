@@ -26,11 +26,13 @@ const { Content } = await render(entry);
 const ctaHref = localizePath(primaryCta.route.path, locale);
 ---
 
-<BaseLayout locale={locale} title={entry.data.title} description={entry.data.description} noindex={entry.data.noindex} schemaType={entry.data.schemaType}>
+<BaseLayout locale={locale} title={entry.data.seoTitle ?? entry.data.title} description={entry.data.description} noindex={entry.data.noindex} schemaType={entry.data.schemaType} ogImage="/og-on-page-seo.png" faqItems={copy.faq.items}>
   <section class="hero" aria-labelledby="on-page-seo-title"><Container><p class="eyebrow">{copy.heroEyebrow}</p><h1 id="on-page-seo-title">{entry.data.title}</h1><div class="prose hero__prose lead"><Content /></div></Container></section>
   <section class="section" aria-labelledby="on-page-problem-title"><Container><div class="section__heading"><p class="eyebrow">{copy.problem.eyebrow}</p><h2 id="on-page-problem-title">{copy.problem.title}</h2><p>{copy.problem.body}</p></div></Container></section>
   <section class="section section--tinted" aria-labelledby="on-page-method-title"><Container><div class="section__heading"><p class="eyebrow">{copy.method.eyebrow}</p><h2 id="on-page-method-title">{copy.method.title}</h2><p>{copy.method.intro}</p></div><ol class="steps">{copy.method.steps.map((step) => <li><span class="mono">{step.number}</span><div><h3>{step.title}</h3><p>{step.body}</p></div></li>)}</ol></Container></section>
+  <section class="section page-figure-band"><Container><figure class="page-figure"><img src="/images/service-on-page-seo.webp" width="1344" height="768" alt="Printed page mockup with handwritten margin annotations on a desk" loading="lazy" decoding="async" /><figcaption>Page edits are reviewed against the brief before anything ships.</figcaption></figure></Container></section>
   <section class="section" aria-labelledby="on-page-outcome-title"><Container><div class="split"><div class="section__heading"><p class="eyebrow">{copy.outcome.eyebrow}</p><h2 id="on-page-outcome-title">{copy.outcome.title}</h2><p>{copy.outcome.body}</p></div><ul class="check-list">{copy.outcome.points.map((point) => <li>{point}</li>)}</ul></div></Container></section>
+  <section class="section" aria-labelledby="faq-title"><Container><div class="section__heading"><h2 id="faq-title">{copy.faq.title}</h2></div>{copy.faq.items.map((item) => <article><h3>{item.question}</h3><p>{item.answer}</p></article>)}</Container></section>
   <section class="section section--tinted" aria-labelledby="on-page-links-title"><Container><div class="section__heading"><p class="eyebrow">{copy.related.eyebrow}</p><h2 id="on-page-links-title">{copy.related.title}</h2></div><nav class="link-grid" aria-label={copy.related.ariaLabel}>{copy.links.map((link, index) => <a href={hrefFor(link.routeKey, `onPageSeo.links[${index}].routeKey`)}>{link.label}</a>)}</nav></Container></section>
   <section class="closing" aria-labelledby="on-page-cta-title"><Container><div class="closing__inner"><div><p class="eyebrow">{copy.cta.eyebrow}</p><h2 id="on-page-cta-title">{copy.cta.title}</h2></div><Button href={ctaHref} variant="secondary">{t(locale, primaryCta.labelKey)}</Button></div></Container></section>
 </BaseLayout>
@@ -44,6 +46,10 @@ const ctaHref = localizePath(primaryCta.route.path, locale);
   .section--tinted,.closing { background: var(--surface-1); border-block: var(--hairline) solid var(--border); }
   .section__heading { max-inline-size: var(--measure); }
   .section__heading > p:last-child { margin-block-start: var(--space-4); color: var(--slate-700); }
+  .page-figure-band { padding-block-start: 0; }
+  .page-figure { margin: 0; overflow: hidden; border: var(--hairline) solid var(--border); border-radius: var(--radius-md); background: var(--surface-1); }
+  .page-figure img { inline-size: 100%; aspect-ratio: 1344 / 768; object-fit: cover; }
+  .page-figure figcaption { padding: var(--space-3) var(--space-4); color: var(--slate-700); font-size: var(--text-small); }
   .steps { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); margin: var(--space-12) 0 0; padding: 0; list-style: none; }
   .steps li { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-4); padding-block-start: var(--space-6); border-block-start: var(--hairline) solid var(--border); }
   .steps li > span { color: var(--action); }

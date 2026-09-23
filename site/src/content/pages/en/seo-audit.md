@@ -2,7 +2,8 @@
 locale: en
 route: seoAudit
 title: A fixed-price SEO audit with verifiable next steps
-description: 'A fixed-price SEO audit with a 45-minute walkthrough, documented findings, and clear next paths.'
+seoTitle: 'Fixed-Price SEO Audit with Verifiable Steps | VANTFLOW'
+description: 'A fixed-price SEO audit with a 45-minute walkthrough, documented findings, prioritised fixes and a clear, verifiable path for the next 90 days.'
 canonical: ''
 alternates: []
 schemaType: 'Service'

@@ -2,7 +2,7 @@
 locale: en
 route: terms
 title: Terms for using this site
-description: The straightforward terms for the VANTFLOW information site and off-site SEO enquiries.
+description: 'Straightforward terms covering the VANTFLOW information site, external enquiry channels and separately agreed SEO work, without accounts or payments.'
 canonical: ''
 alternates: []
 schemaType: 'WebPage'

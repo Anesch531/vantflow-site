@@ -2,7 +2,8 @@
 locale: en
 route: dubaiProperty
 title: SEO for real estate in Dubai built around property discovery
-description: 'SEO for Dubai property firms, shaped around location, property intent, technical foundations, and useful content.'
+seoTitle: 'SEO for Dubai Real Estate | VANTFLOW'
+description: 'SEO for Dubai real estate firms, shaped around location and property intent, sound technical foundations, useful content and clear enquiry paths.'
 canonical: ''
 alternates: []
 schemaType: 'Service'

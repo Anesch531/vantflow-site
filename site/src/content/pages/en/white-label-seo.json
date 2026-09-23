@@ -27,6 +27,15 @@
       "Process proof that can be reviewed without invented performance claims"
     ]
   },
+  "faq": {
+    "title": "Common questions about white-label delivery",
+    "items": [
+      { "question": "Does VANTFLOW replace the agency relationship?", "answer": "No. Your agency remains the commercial owner. Brand, access, approvals, invoicing and client-facing responsibilities are agreed before delivery starts." },
+      { "question": "Can reports use our agency brand?", "answer": "Yes. Client-facing material can be prepared for the agreed agency brand, while internal handoffs retain the evidence and ownership needed for review." },
+      { "question": "How is work approved?", "answer": "The scope names the approval owner and review points. Recommendations remain open to challenge before they become client-facing actions." },
+      { "question": "Are partner rates published?", "answer": "No. Partner terms depend on scope, responsibilities and delivery cadence, so they are discussed directly rather than assumed from a public rate." }
+    ]
+  },
   "links": [
     { "label": "See all SEO services", "routeKey": "services" },
     { "label": "Review technical SEO", "routeKey": "technicalSeo" },

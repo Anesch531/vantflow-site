@@ -2,7 +2,7 @@
 locale: en
 route: privacy
 title: Privacy, stated plainly
-description: How VANTFLOW handles enquiry data, cookies, analytics, and privacy requests.
+description: 'How VANTFLOW handles enquiry data, external contact channels, cookies, analytics and privacy requests on this deliberately simple information site.'
 canonical: ''
 alternates: []
 schemaType: 'WebPage'

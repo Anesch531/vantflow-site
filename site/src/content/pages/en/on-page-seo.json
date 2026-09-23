@@ -27,6 +27,15 @@
       "Internal links that reinforce page relationships"
     ]
   },
+  "faq": {
+    "title": "Common on-page SEO questions",
+    "items": [
+      { "question": "Do you rewrite every page?", "answer": "No. Existing pages are reviewed against their purpose. Recommendations may call for focused edits, consolidation, stronger links or no change at all." },
+      { "question": "How do you prevent keyword overlap?", "answer": "Each page receives a defined search need and business role, then nearby URLs are checked before titles, headings or coverage are changed." },
+      { "question": "Is new content included?", "answer": "New content production is a separate content SEO scope. On-page work focuses on making existing pages clearer, more useful and better connected." },
+      { "question": "What makes an on-page change verifiable?", "answer": "The recommendation states the expected page-level result, such as clearer intent, resolved duplication or a stronger internal pathway, and names the check to repeat." }
+    ]
+  },
   "links": [
     { "label": "Explore all SEO services", "routeKey": "services" },
     { "label": "Resolve systems with technical SEO services", "routeKey": "technicalSeo" },

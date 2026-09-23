@@ -38,6 +38,7 @@ export const pageSchema = z
     /* ---- The six contract fields. Present always; empty allowed until the SEO pass. ---- */
     /** <title> and <h1> source. */
     title: z.string(),
+    seoTitle: z.string().optional(),
     /** Meta description. '' = not written yet. */
     description: z.string(),
     /** Absolute canonical URL, or '' = compute from site + route at build. */

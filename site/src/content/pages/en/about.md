@@ -2,7 +2,8 @@
 locale: en
 route: about
 title: VANTFLOW, an evidence-led SEO consultant
-description: 'How VANTFLOW turns search evidence into reasoned SEO actions, then checks whether the work produced the intended result.'
+seoTitle: 'About VANTFLOW | Evidence-Led SEO Consultancy'
+description: 'Learn how VANTFLOW turns search evidence into reasoned SEO actions, clear handoffs and practical checks that verify whether each change worked.'
 canonical: ''
 alternates: []
 schemaType: 'AboutPage'

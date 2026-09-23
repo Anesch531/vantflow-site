@@ -41,6 +41,15 @@
       "An internal or agency team that needs an evidence-backed implementation brief"
     ]
   },
+  "faq": {
+    "title": "Common questions about the SEO audit",
+    "items": [
+      { "question": "What does the fixed price include?", "answer": "It includes documented findings, prioritised fixes, verification steps and a 45-minute walkthrough focused on the first three findings." },
+      { "question": "Do I need to buy further work?", "answer": "No. The report and walkthrough are complete deliverables. You can implement internally, seek another supplier or discuss a separate scope afterwards." },
+      { "question": "How long does the audit take?", "answer": "Timing depends on the site and access required. Scope and expected delivery are confirmed in writing before the review starts." },
+      { "question": "What should I send first?", "answer": "Send the website, the search problem you have noticed, the relevant market and any platform or access constraints." }
+    ]
+  },
   "next": {
     "eyebrow": "What happens next",
     "title": "Start with the site and the question",

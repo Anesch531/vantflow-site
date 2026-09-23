@@ -27,6 +27,15 @@
       "Checks that keep local information current"
     ]
   },
+  "faq": {
+    "title": "Common local SEO questions",
+    "items": [
+      { "question": "Can local SEO guarantee a map position?", "answer": "No. The work improves accuracy, relevance and maintenance around real business signals; it does not promise a particular position." },
+      { "question": "What information must be confirmed first?", "answer": "The business name, address, phone, hours, services, service area and ownership details need a reliable source before profiles are changed." },
+      { "question": "Do you create reviews?", "answer": "No. Review work covers a responsible request and response process. Endorsements, customer activity and local references are never manufactured." },
+      { "question": "How often should profiles be checked?", "answer": "Cadence depends on business changes and platform activity. The scope defines practical checks for facts, questions, reviews, updates and profile health." }
+    ]
+  },
   "links": [
     { "label": "Explore all SEO services", "routeKey": "services" },
     { "label": "Strengthen pages with on-page SEO services", "routeKey": "onPageSeo" },

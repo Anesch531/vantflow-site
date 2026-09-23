@@ -2,7 +2,8 @@
 locale: en
 route: algerianEcommerce
 title: E-commerce SEO for Algeria built around catalogue discovery
-description: 'SEO for Algerian e-commerce, accounting for French and Arabic search behaviour, catalogue structure, and local market needs.'
+seoTitle: 'E-commerce SEO for Algeria | VANTFLOW'
+description: 'E-commerce SEO for Algeria, accounting for French and Arabic search behaviour, catalogue structure, local buying needs and clear product discovery.'
 canonical: ''
 alternates: []
 schemaType: 'Service'

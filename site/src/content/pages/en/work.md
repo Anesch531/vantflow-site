@@ -2,7 +2,7 @@
 locale: en
 route: work
 title: Work built from evidence, not promises
-description: A published baseline self-audit of vantflow.tech before the Astro rebuild.
+description: 'A published, dated baseline self-audit of vantflow.tech: the full method behind evidence-led SEO, demonstrated transparently on a real working site.'
 canonical: ''
 alternates: []
 schemaType: 'WebPage'

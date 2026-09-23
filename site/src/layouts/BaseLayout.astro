@@ -15,7 +15,8 @@ import '../styles/global.css';
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import monoWoff2 from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url';
 
-import { dirFor, langTag, t, type Locale } from '../lib/i18n';
+import { dirFor, langTag, stripLocale, t, type Locale } from '../lib/i18n';
+import { allRoutes } from '../lib/routes';
 import { contact, whatsApp } from '../lib/contact';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -24,12 +25,16 @@ interface Props {
   locale: Locale;
   /** <title>. Site name is appended automatically. */
   title: string;
+  seoTitle?: string;
   description?: string;
   noindex?: boolean;
   /** Home gets "VANTFLOW — <tagline>" rather than the H1 text. */
   isHome?: boolean;
   /** JSON-LD @type for the page node. */
   schemaType?: string;
+  ogImage?: string;
+  offers?: Array<{ price: string; priceCurrency: string; url?: string; description?: string }>;
+  faqItems?: Array<{ question: string; answer: string }>;
   /** Demote the header CTA when the page hero already carries the primary button. */
   headerCtaVariant?: 'primary' | 'secondary';
 }
@@ -37,18 +42,22 @@ interface Props {
 const {
   locale,
   title,
+  seoTitle,
   description = '',
   noindex = false,
   isHome = false,
   schemaType = 'WebPage',
   headerCtaVariant = 'primary',
+  ogImage: ogImagePath = '/og-default.png',
+  offers,
+  faqItems,
 } = Astro.props;
 
 const siteName = t(locale, 'site.name');
 const siteUrl = Astro.site ?? new URL('https://vantflow.tech');
-const docTitle = isHome ? `${siteName} — Evidence-led SEO for agencies` : `${title} — ${siteName}`;
+const docTitle = isHome ? `${siteName} — Evidence-led SEO for agencies` : ((seoTitle ?? title).toLowerCase().includes(siteName.toLowerCase()) ? (seoTitle ?? title) : `${seoTitle ?? title} — ${siteName}`);
 const canonical = new URL(Astro.url.pathname, siteUrl).href;
-const ogImage = new URL('/og-default.png', siteUrl).href;
+const ogImage = new URL(ogImagePath, siteUrl).href;
 const ogLocale = { en: 'en_GB', fr: 'fr_FR', ar: 'ar_AE' }[locale];
 
 const orgId = `${siteUrl.origin}/#organization`;
@@ -56,7 +65,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'ProfessionalService',
+      '@type': 'Organization',
       '@id': orgId,
       name: siteName,
       url: siteUrl.origin + '/',
@@ -83,9 +92,27 @@ const jsonLd = {
       description: description || undefined,
       inLanguage: langTag[locale],
       isPartOf: { '@type': 'WebSite', url: siteUrl.origin + '/', name: siteName, publisher: { '@id': orgId } },
+      ...(schemaType === 'Service' && offers?.length ? { offers: offers.map((offer) => ({ '@type': 'Offer', price: offer.price, priceCurrency: offer.priceCurrency, url: offer.url ?? canonical, description: offer.description })) } : {}),
     },
   ],
 };
+const pathname = Astro.url.pathname.replace(/\/+/g, '/');
+const cleanPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+const basePath = stripLocale(cleanPath);
+const isExcluded = basePath === '/' || /\/404(?:\.html)?\/$/.test(basePath) || basePath === '/privacy/' || basePath === '/terms/' || basePath === '/privacy.html/' || basePath === '/terms.html/';
+if (!isExcluded) {
+  const parts = basePath.split('/').filter(Boolean);
+  const items = [{ name: t(locale, 'route.home'), item: new URL('/', siteUrl).href }];
+  let current = '';
+  parts.forEach((part) => {
+    current += `/${part}/`;
+    const match = allRoutes.find((candidate) => candidate.path === current);
+    const label = match ? t(locale, match.labelKey) : part.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+    items.push({ name: label, item: new URL(current, siteUrl).href });
+  });
+  jsonLd['@graph'].push({ '@type': 'BreadcrumbList', itemListElement: items.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.name, item: item.item })) });
+}
+if (faqItems?.length) jsonLd['@graph'].push({ '@type': 'FAQPage', mainEntity: faqItems.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) });
 ---
 
 <!doctype html>

@@ -2,7 +2,7 @@
 locale: en
 route: home
 title: Every fix carries a reason
-description: 'Evidence-led SEO support for agencies: every fix carries a reason, with clear actions and checks.'
+description: 'White-label SEO delivery for agencies: technical, on-page, local and content work, with every fix tied to evidence and independently verified.'
 canonical: ''
 alternates: []
 schemaType: 'WebPage'

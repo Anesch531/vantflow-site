@@ -27,6 +27,15 @@
       "Verification criteria for releases and recurring checks"
     ]
   },
+  "faq": {
+    "title": "Common technical SEO questions",
+    "items": [
+      { "question": "Does every crawler warning need fixing?", "answer": "No. Findings are prioritised by affected pages, impact, dependency and ownership. A warning without a meaningful consequence should not displace higher-value work." },
+      { "question": "Will developers receive implementation detail?", "answer": "Yes. Recommendations identify affected templates or URLs, the reason for the change and a verification criterion for the release." },
+      { "question": "Does technical SEO include site speed?", "answer": "Yes, when performance constrains discovery or use. Speed work is assessed as part of the wider rendering and template system rather than as an isolated score." },
+      { "question": "How are fixes checked?", "answer": "The relevant crawl, indexation, rendering or performance evidence is collected again after deployment and compared with the original finding." }
+    ]
+  },
   "links": [
     { "label": "Explore all SEO services", "routeKey": "services" },
     { "label": "Improve pages with on-page SEO services", "routeKey": "onPageSeo" },
