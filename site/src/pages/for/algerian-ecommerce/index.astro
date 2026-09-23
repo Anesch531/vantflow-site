@@ -30,6 +30,7 @@ const ctaHref = localizePath(primaryCta.route.path, locale);
   <section class="hero" aria-labelledby="algerian-ecommerce-title"><Container><p class="eyebrow">{copy.heroEyebrow}</p><h1 id="algerian-ecommerce-title">{entry.data.title}</h1><div class="prose hero__prose lead"><Content /></div></Container></section>
   <section class="section" aria-labelledby="algerian-problem-title"><Container><div class="section__heading"><p class="eyebrow">{copy.problem.eyebrow}</p><h2 id="algerian-problem-title">{copy.problem.title}</h2><p>{copy.problem.body}</p></div></Container></section>
   <section class="section section--tinted" aria-labelledby="algerian-method-title"><Container><div class="section__heading"><p class="eyebrow">{copy.method.eyebrow}</p><h2 id="algerian-method-title">{copy.method.title}</h2><p>{copy.method.intro}</p></div><ol class="steps">{copy.method.steps.map((step) => <li><span class="mono">{step.number}</span><div><h3>{step.title}</h3><p>{step.body}</p></div></li>)}</ol></Container></section>
+  <section class="section page-figure-band"><Container><figure class="page-figure"><img src="/images/vertical-algeria-commerce.webp" width="1600" height="893" alt="Packaged parcels and a small merchant workspace in warm natural light" loading="lazy" decoding="async" /><figcaption>A practical commerce scene: the work stays close to the merchant and the customer journey.</figcaption></figure></Container></section>
   <section class="section" aria-labelledby="algerian-outcome-title"><Container><div class="split"><div class="section__heading"><p class="eyebrow">{copy.outcome.eyebrow}</p><h2 id="algerian-outcome-title">{copy.outcome.title}</h2><p>{copy.outcome.body}</p></div><ul class="check-list">{copy.outcome.points.map((point) => <li>{point}</li>)}</ul></div></Container></section>
   <section class="section section--tinted" aria-labelledby="algerian-links-title"><Container><div class="section__heading"><p class="eyebrow">{copy.related.eyebrow}</p><h2 id="algerian-links-title">{copy.related.title}</h2></div><nav class="link-grid" aria-label={copy.related.ariaLabel}>{copy.links.map((link, index) => <a href={hrefFor(link.routeKey, `algerianEcommerce.links[${index}].routeKey`)}>{link.label}</a>)}</nav></Container></section>
   <section class="closing" aria-labelledby="algerian-cta-title"><Container><div class="closing__inner"><div><p class="eyebrow">{copy.cta.eyebrow}</p><h2 id="algerian-cta-title">{copy.cta.title}</h2></div><Button href={ctaHref} variant="secondary">{t(locale, primaryCta.labelKey)}</Button></div></Container></section>
@@ -44,6 +45,10 @@ const ctaHref = localizePath(primaryCta.route.path, locale);
   .section--tinted,.closing { background: var(--surface-1); border-block: var(--hairline) solid var(--border); }
   .section__heading { max-inline-size: var(--measure); }
   .section__heading > p:last-child { margin-block-start: var(--space-4); color: var(--slate-700); }
+  .page-figure-band { padding-block-start: 0; }
+  .page-figure { margin: 0; overflow: hidden; border: var(--hairline) solid var(--border); border-radius: var(--radius-md); background: var(--surface-1); }
+  .page-figure img { inline-size: 100%; aspect-ratio: 1600 / 893; object-fit: cover; }
+  .page-figure figcaption { padding: var(--space-3) var(--space-4); color: var(--slate-700); font-size: var(--text-small); }
   .steps { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); margin: var(--space-12) 0 0; padding: 0; list-style: none; }
   .steps li { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-4); padding-block-start: var(--space-6); border-block-start: var(--hairline) solid var(--border); }
   .steps li > span { color: var(--action); }

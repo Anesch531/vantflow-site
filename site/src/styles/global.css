@@ -276,3 +276,45 @@ pre,
     color: var(--text-muted);
   }
 }
+
+/* ---- T20: CSS-only entrance motion ------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes t20-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(var(--space-3));
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  :root {
+    --t20-enter-duration: 450ms;
+    --t20-enter-stagger: 80ms;
+  }
+
+  .hero__copy,
+  .hero__figure,
+  .page-figure {
+    opacity: 0;
+    animation: t20-fade-up var(--t20-enter-duration) ease-out forwards;
+  }
+
+  .hero__figure {
+    animation-delay: var(--t20-enter-stagger);
+  }
+
+  .hero__figure,
+  .page-figure {
+    transition: opacity var(--motion-fast), transform var(--motion-fast);
+  }
+
+  .hero__figure:hover,
+  .page-figure:hover {
+    opacity: 0.96;
+    transform: translateY(calc(var(--space-1) * -1));
+  }
+}

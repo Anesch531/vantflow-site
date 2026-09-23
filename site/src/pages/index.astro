@@ -102,6 +102,11 @@ const { Content } = await render(entry);
             The same chain stays visible from the first finding to the final check.
           </p>
         </aside>
+
+        <figure class="hero__figure">
+          <img src="/images/hero-audit-desk.webp" width="1600" height="893" alt="Desk with laptop, printed SEO audit report, and soft morning light" loading="eager" fetchpriority="high" decoding="async" />
+          <figcaption>Audit work made visible: evidence, recommendations, and the next check.</figcaption>
+        </figure>
       </div>
     </Container>
   </section>
@@ -319,6 +324,26 @@ const { Content } = await render(entry);
     font-size: var(--text-small);
   }
 
+  .hero__figure {
+    margin: 0;
+    overflow: hidden;
+    border: var(--hairline) solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-1);
+  }
+
+  .hero__figure img {
+    inline-size: 100%;
+    aspect-ratio: 1600 / 893;
+    object-fit: cover;
+  }
+
+  .hero__figure figcaption {
+    padding: var(--space-3) var(--space-4);
+    color: var(--slate-700);
+    font-size: var(--text-small);
+  }
+
   .section {
     padding-block: var(--section-gap);
   }
@@ -510,6 +535,10 @@ const { Content } = await render(entry);
     .hero__grid {
       grid-template-columns: minmax(0, 5fr) minmax(0, 3fr);
       align-items: end;
+    }
+
+    .hero__figure {
+      grid-column: 1 / -1;
     }
 
     .method-grid {
