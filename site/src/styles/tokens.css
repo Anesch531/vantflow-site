@@ -48,6 +48,7 @@
   /* ---- §3 Font families (self-hosted variable fonts, see ASSETS.md) ----- */
   --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  /* --font-arabic: loads IBM Plex Sans Arabic @font-face in T14 (RTL). Token reserved; no Arabic copy ships before then. */
   --font-arabic: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', system-ui, sans-serif;
 
   /* ---- §3 Weights ------------------------------------------------------- */

@@ -62,3 +62,42 @@ BaseLayout `og:image:width`/`og:image:height` = 1200/630, matching all OG PNGs.
 | `public/_redirects` | Cloudflare Pages 301 map: `.html` legal URLs → directory URLs (T21; inert on GH Pages until T22) |
 | `public/_headers` | Cloudflare Pages response headers: nosniff, Referrer-Policy, immutable `/_astro/*` cache (T21; inert on GH Pages until T22) |
 | `public/sitemap.xml` | Index sitemap — 16 URLs, no lastmod/changefreq/priority (T21 / #42) |
+
+## T24 responsive variants
+
+Image markup uses the 1280-wide variant as `src`; `width` and `height` match that file. Each `srcset` also exposes the smaller candidates and the parent asset's maximum width.
+
+| Asset | Source | Licence | Status |
+|---|---|---|---|
+| `public/images/hero-audit-desk-640.webp` | sharp resize of `hero-audit-desk.webp` editorial asset | Same as parent | added T24 |
+| `public/images/hero-audit-desk-960.webp` | sharp resize of `hero-audit-desk.webp` editorial asset | Same as parent | added T24 |
+| `public/images/hero-audit-desk-1280.webp` | sharp resize of `hero-audit-desk.webp` editorial asset | Same as parent | added T24 |
+| `public/images/hero-audit-desk-1600.webp` | sharp resize of `hero-audit-desk.webp` editorial asset | Same as parent | added T24 |
+| `public/images/vertical-dubai-property-640.webp` | sharp resize of `vertical-dubai-property.webp` editorial asset | Same as parent | added T24 |
+| `public/images/vertical-dubai-property-960.webp` | sharp resize of `vertical-dubai-property.webp` editorial asset | Same as parent | added T24 |
+| `public/images/vertical-dubai-property-1280.webp` | sharp resize of `vertical-dubai-property.webp` editorial asset | Same as parent | added T24 |
+| `public/images/vertical-dubai-property-1600.webp` | sharp resize of `vertical-dubai-property.webp` editorial asset | Same as parent | added T24 |
+| `public/images/vertical-algeria-commerce-640.webp` | sharp resize of `vertical-algeria-commerce.webp` editorial asset | Same as parent | added T24 |
+| `public/images/vertical-algeria-commerce-960.webp` | sharp resize of `vertical-algeria-commerce.webp` editorial asset | Same as parent | added T24 |
+| `public/images/vertical-algeria-commerce-1280.webp` | sharp resize of `vertical-algeria-commerce.webp` editorial asset | Same as parent | added T24 |
+| `public/images/vertical-algeria-commerce-1600.webp` | sharp resize of `vertical-algeria-commerce.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-white-label-seo-640.webp` | sharp resize of `service-white-label-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-white-label-seo-960.webp` | sharp resize of `service-white-label-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-white-label-seo-1280.webp` | sharp resize of `service-white-label-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-white-label-seo-1344.webp` | sharp resize of `service-white-label-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-technical-seo-640.webp` | sharp resize of `service-technical-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-technical-seo-960.webp` | sharp resize of `service-technical-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-technical-seo-1280.webp` | sharp resize of `service-technical-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-technical-seo-1344.webp` | sharp resize of `service-technical-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-on-page-seo-640.webp` | sharp resize of `service-on-page-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-on-page-seo-960.webp` | sharp resize of `service-on-page-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-on-page-seo-1280.webp` | sharp resize of `service-on-page-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-on-page-seo-1344.webp` | sharp resize of `service-on-page-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-local-seo-640.webp` | sharp resize of `service-local-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-local-seo-960.webp` | sharp resize of `service-local-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-local-seo-1280.webp` | sharp resize of `service-local-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-local-seo-1344.webp` | sharp resize of `service-local-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-content-seo-640.webp` | sharp resize of `service-content-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-content-seo-960.webp` | sharp resize of `service-content-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-content-seo-1280.webp` | sharp resize of `service-content-seo.webp` editorial asset | Same as parent | added T24 |
+| `public/images/service-content-seo-1344.webp` | sharp resize of `service-content-seo.webp` editorial asset | Same as parent | added T24 |

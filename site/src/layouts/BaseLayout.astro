@@ -13,7 +13,6 @@ import '@fontsource-variable/jetbrains-mono';
 import '../styles/global.css';
 
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
-import monoWoff2 from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url';
 
 import { dirFor, langTag, stripLocale, t, type Locale } from '../lib/i18n';
 import { allRoutes } from '../lib/routes';
@@ -147,7 +146,6 @@ if (faqItems?.length) jsonLd['@graph'].push({ '@type': 'FAQPage', mainEntity: fa
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="preload" href={interWoff2} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={monoWoff2} as="font" type="font/woff2" crossorigin />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>

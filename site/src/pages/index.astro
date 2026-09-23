@@ -104,7 +104,17 @@ const { Content } = await render(entry);
         </aside>
 
         <figure class="hero__figure">
-          <img src="/images/hero-audit-desk.webp" width="1600" height="893" alt="Desk with laptop, printed SEO audit report, and soft morning light" loading="eager" fetchpriority="high" decoding="async" />
+          <img
+            src="/images/hero-audit-desk-1280.webp"
+            srcset="/images/hero-audit-desk-640.webp 640w, /images/hero-audit-desk-960.webp 960w, /images/hero-audit-desk-1280.webp 1280w, /images/hero-audit-desk-1600.webp 1600w"
+            sizes="(min-width: 64rem) 1024px, (min-width: 48rem) 768px, 100vw"
+            width="1280"
+            height="714"
+            alt="Desk with laptop, printed SEO audit report, and soft morning light"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
           <figcaption>Audit work made visible: evidence, recommendations, and the next check.</figcaption>
         </figure>
       </div>

@@ -17,6 +17,9 @@ export default defineConfig({
     format: 'preserve',
   },
 
+  // Keep even small font subsets as cacheable files rather than render-blocking base64 CSS.
+  vite: { build: { assetsInlineLimit: 0 } },
+
   // No trailing-slash redirects on a static host: keep URLs as emitted.
   trailingSlash: 'ignore',
 });
