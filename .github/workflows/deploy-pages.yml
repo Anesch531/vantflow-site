@@ -46,4 +46,7 @@ jobs:
         uses: actions/deploy-pages@v4
       - name: Ping IndexNow
         continue-on-error: true
-        run: curl -sS -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json' -d '{"host":"vantflow.tech","key":"5d0d735d-3096-4ea4-b7a8-d1f49edb6868","keyLocation":"https://vantflow.tech/indexnow.txt","urlList":["https://vantflow.tech/"]}'
+        run: |
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json' \
+            -d '{"host":"vantflow.tech","key":"5d0d735d-3096-4ea4-b7a8-d1f49edb6868","keyLocation":"https://vantflow.tech/indexnow.txt","urlList":["https://vantflow.tech/"]}'
