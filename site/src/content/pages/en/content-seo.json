@@ -2,18 +2,18 @@
   "heroEyebrow": "Content SEO",
   "problem": {
     "eyebrow": "The content constraint",
-    "title": "Publishing more does not answer the right questions",
-    "body": "Content becomes difficult to manage when topics overlap, pages lack a defined audience, or useful evidence is buried under broad language. Search visibility needs a connected editorial system, not a larger pile of pages."
+    "title": "Content SEO is not a mandate to publish more",
+    "body": "Content SEO becomes difficult to manage when topics overlap, pages lack a defined audience, or useful evidence is buried under broad language. Search visibility needs a connected editorial system, not a larger pile of pages."
   },
   "method": {
     "eyebrow": "The content method",
-    "title": "Plan useful coverage around real audience questions",
+    "title": "Plan content SEO for search, AI discovery, and GEO",
     "intro": "The work connects demand, expertise, page purpose, and distribution so each content decision has a reason to exist.",
     "steps": [
       { "number": "01", "title": "Audience questions", "body": "Group the questions, decisions, and objections that matter to the audience, then distinguish a useful topic from a superficial keyword variation." },
       { "number": "02", "title": "Topic architecture", "body": "Assign topics to hubs, supporting pages, and existing URLs so coverage grows without creating avoidable overlap or orphaned work." },
       { "number": "03", "title": "Evidence and usefulness", "body": "Set expectations for first-hand detail, sources, examples, structure, and editorial review before a page is drafted or refreshed." },
-      { "number": "04", "title": "Search and AI discovery", "body": "Structure clear answers and supporting context so content is easier to interpret across conventional search and AI-search surfaces, without treating GEO as a separate service." }
+      { "number": "04", "title": "AI search optimisation and GEO", "body": "AI search optimisation starts with clear answers and supporting context that are easier to interpret across conventional search and AI-search surfaces, without treating GEO as a separate service." }
     ]
   },
   "outcome": {

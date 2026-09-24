@@ -1,0 +1,51 @@
+{
+  "heroEyebrow": "Buying decision",
+  "sections": [
+    {
+      "eyebrow": "Purpose",
+      "title": "SEO audit vs retainer starts with the uncertainty",
+      "body": "Choose the format according to the uncertainty you need to remove. An audit is suited to a bounded diagnostic question: what is happening, what matters, what should change and how will the change be checked? A retainer is suited to continuing work where priorities, releases, content and performance need repeated specialist attention. Begin by writing the decision the engagement must support. If stakeholders cannot agree which problems are real or which sequence is justified, diagnosis usually comes first. If the organisation already has reliable evidence and an accepted backlog, recurring capacity may be the genuine constraint. Avoid choosing by document size, meeting count or a supplier's preferred billing model. Those are features of delivery, not the purpose. The first purchase should leave the organisation with less uncertainty and a clearer owner for the next action, even if no longer engagement follows."
+    },
+    {
+      "eyebrow": "Audit first",
+      "title": "Buy an SEO audit first when the baseline is unclear",
+      "body": "An audit is the stronger starting point when a site has no trusted technical baseline, when several explanations compete, or when a migration, redesign or supplier change creates a defined review need. It is also useful when a team has a long tool-generated issue list but no defensible order of work. The audit should inspect the agreed scope, connect material findings to evidence and turn them into prioritised actions with verification steps. Its bounded form creates a decision point: accept the findings, challenge them, implement internally or seek continuing help. This reduces the risk of entering a recurring agreement whose early months are spent discovering what should have been defined at the start. The audit is not automatically sufficient, however. It does not create engineering capacity or authority to release fixes. Before purchase, identify who can answer questions, provide access and own implementation after the walkthrough."
+    },
+    {
+      "eyebrow": "Retainer first",
+      "title": "Choose a retainer first when ongoing capacity is the gap",
+      "body": "A retainer can be appropriate without a new broad audit when the business already maintains current evidence, a prioritised backlog and capable implementation owners. Examples include a mature team that needs recurring technical review, editorial decision support or quality assurance across regular releases. In that situation, repeating discovery may delay useful work. The retainer still needs a baseline, but it can begin from existing records if the specialist can inspect and trust them. Define what recurring capacity buys: named activities, expected cadence, decision rights, communication, review points and exclusions. Clarify how unplanned incidents compete with planned work and whether unused capacity expires or moves. A vague promise of continuous optimisation is not a scope. The organisation should be able to explain which decisions improve because the retainer exists and how it will know when the format is no longer the best use of resources."
+    },
+    {
+      "eyebrow": "Implementation",
+      "title": "Match the engagement to who can make changes",
+      "body": "Diagnosis and implementation are different responsibilities. An audit can specify a sound desired state but cannot release a template, approve copy or alter infrastructure unless that implementation is separately included. A retainer may provide implementation support, direct implementation or review only; the agreement must say which. Map every likely workstream to an owner before comparing offers. Technical changes may require developers and release approval, content changes may require subject expertise, and measurement changes may require analytics access. If these owners do not exist, recurring recommendations can accumulate without resolution. If they do exist, a bounded audit may be enough to give them a reliable plan. Ask how questions are handled after delivery, how acceptance criteria are written and who verifies production. The best commercial format is the one that fits the organisation's actual ability to act, not the one with the broadest list of possible activities."
+    },
+    {
+      "eyebrow": "Commercials",
+      "title": "Compare fixed price and recurring cost on equal scope",
+      "body": "Compare cost only after responsibilities and boundaries are visible. A fixed-price audit should identify the property, questions, evidence sources, exclusions, deliverables and walkthrough. A retainer should identify capacity or outputs, cadence, response expectations, revision boundaries and cancellation terms. Add internal costs: access preparation, stakeholder meetings, development, writing, approval and verification. A lower fee can produce a higher total cost if the report needs interpretation or the recurring team repeatedly rebuilds context. Equally, an audit can be poor value when the underlying need is continuous review across frequent releases. VANTFLOW states an audit-first route where appropriate, with the audit fee credited when a client moves into a retainer. Treat that as a buying sequence, not a reason to assume the retainer is necessary. The later engagement should still have its own objective, scope and review decision."
+    },
+    {
+      "eyebrow": "Review",
+      "title": "Set an exit condition before either engagement begins",
+      "body": "A useful audit has a completion condition: the agreed investigation is delivered, discussed and converted into owned next actions with checks. A useful retainer has periodic review conditions: the work remains relevant, evidence quality is adequate, implementation is moving and recurring specialist input still removes a real constraint. Define these conditions at purchase rather than waiting for dissatisfaction. After an audit, decide which findings the internal team can handle, which need specialist support and which should remain monitored. During a retainer, review whether priorities changed for evidence-based reasons and whether completed work was verified rather than merely reported. Keep source records and decision notes so changing suppliers does not erase context. Exit is not failure; it can mean the bounded question was answered or the organisation developed enough internal capacity. Clear stopping rules protect both formats from becoming activity without purpose."
+    }
+  ],
+  "related": {
+    "eyebrow": "Related guidance",
+    "title": "Define the audit before choosing ongoing support",
+    "ariaLabel": "Related audit and retainer guidance"
+  },
+  "links": [
+    { "routeKey": "seoAudit", "label": "Review the fixed-price SEO audit" },
+    { "routeKey": "auditContents", "label": "See what an SEO audit should contain" },
+    { "routeKey": "readSeoAudit", "label": "Learn how to read an SEO audit" },
+    { "routeKey": "pricing", "label": "Compare VANTFLOW pricing" },
+    { "routeKey": "technicalSeo", "label": "Explore technical SEO support" }
+  ],
+  "cta": {
+    "eyebrow": "Audit before assumption",
+    "title": "Start with a bounded view of what needs to change"
+  }
+}

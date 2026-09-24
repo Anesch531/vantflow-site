@@ -1,7 +1,7 @@
 {
   "heroEyebrow": "VANTFLOW work / baseline 01",
   "refresh": "Audited 2026-09-23 · re-check planned about every 6 months",
-  "context": { "eyebrow": "Context", "title": "A baseline before the rebuild", "body": "The target was https://vantflow.tech/ on the live pre-rebuild site. The crawl followed links from the homepage, so this is a narrow baseline, not a claim about future traffic, rankings, or outcomes." },
+  "context": { "eyebrow": "Context", "title": "An SEO audit example before the rebuild", "body": "This SEO audit example covers https://vantflow.tech/ on the live pre-rebuild site. The crawl followed links from the homepage, so this is a narrow baseline, not a claim about future traffic, rankings, or outcomes." },
   "method": { "eyebrow": "Method", "title": "Crawl, prioritize, fix, verify", "steps": [
     { "title": "Crawl", "body": "Run an OpenSEO site audit across the live same-origin footprint." },
     { "title": "Prioritize", "body": "Separate observed issues from assumptions. Keep the list honest when the count is small." },

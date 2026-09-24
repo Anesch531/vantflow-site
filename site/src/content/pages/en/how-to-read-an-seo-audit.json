@@ -1,0 +1,51 @@
+{
+  "heroEyebrow": "Report literacy",
+  "sections": [
+    {
+      "eyebrow": "Orientation",
+      "title": "How to read an SEO audit from scope to decision",
+      "body": "Start with the brief, scope and review date rather than the list of warnings. Confirm which hostname, subdomains, environments, templates and markets were considered. Check the questions the audit set out to answer and the evidence sources available. This establishes the boundary for every later conclusion. A statement about sampled product pages should not silently become a claim about the whole site, and a crawl without first-party data should not imply knowledge of traffic or conversion impact. Note exclusions and assumptions before reading the summary. Then ask whether the report answered the agreed question within those limits. This first pass prevents polished presentation or a large issue count from creating false confidence. It also gives you a fair basis for review: findings can be challenged against the scope that was actually commissioned, while useful conclusions are not rejected merely because the audit did not investigate an unrelated question."
+    },
+    {
+      "eyebrow": "Findings",
+      "title": "Separate SEO audit findings from interpretations",
+      "body": "Read each important finding as several parts: observation, evidence, interpretation, consequence and recommendation. The observation should describe a condition that can be inspected. The evidence should identify where and how it was seen. The interpretation explains why it exists or matters, and may carry more uncertainty. The recommendation proposes a desired change. Keeping these parts separate makes review precise. You can accept that pages emit conflicting directives while questioning the assumed cause, or agree with a desired outcome while choosing a different implementation. Look for wording that distinguishes confirmed patterns from hypotheses and isolated examples from broad conditions. Select several high-priority findings and try to reproduce them using the stated URLs or method. You do not need to repeat the entire audit. This sample tests whether the evidence trail is usable and whether the summary accurately represents the underlying detail. Record questions where reproduction fails rather than quietly converting uncertainty into rejection."
+    },
+    {
+      "eyebrow": "Priority",
+      "title": "Read SEO audit priorities as reasoned trade-offs",
+      "body": "Priority labels are decisions, not measurements. Find the criteria behind them: likely impact, affected breadth, confidence, effort, dependencies, risk and relevance to important pages or journeys. Then compare those assumptions with current business and engineering context. A technically serious issue may wait for a planned template release; a modest change may move earlier because it is safe, broad and already fits scheduled work. Neither adjustment invalidates the audit if the reason is recorded. Be cautious when every issue is described as urgent or when a proprietary score substitutes for explanation. Ask what would change the priority and whether related findings share one root cause. This can prevent duplicated tickets and conflicting fixes. Keep the original recommendation and the agreed delivery order distinct. The report records the auditor's judgement at a date; the implementation plan records the organisation's decision after constraints and ownership are known."
+    },
+    {
+      "eyebrow": "Translation",
+      "title": "Convert recommendations into owned implementation work",
+      "body": "A recommendation becomes usable work only when it has an owner, affected scope, desired state, dependencies and acceptance criteria. Preserve the finding's evidence when writing tickets so implementers understand the reason and can identify edge cases. Confirm whether the report recommends a principle or a specific technical solution. If the auditor could not inspect the CMS, framework or release process, internal engineers may need to choose the safest implementation while retaining the stated outcome. Group findings that one template or configuration change can resolve, but keep separate verification checks where outcomes differ. Identify approvals for content, analytics, infrastructure and release timing. If nobody has authority or capacity to make the change, mark that constraint openly rather than reporting the recommendation as in progress. This translation pass exposes whether the audit is actionable and whether additional technical SEO support, editorial input or development capacity is required."
+    },
+    {
+      "eyebrow": "Verification",
+      "title": "Verify the fix against the original SEO audit evidence",
+      "body": "Before release, capture the baseline and the exact check that will test the intended condition. After release, confirm the production output rather than relying on a completed ticket or staging screenshot. Revisit the same URLs, templates and signals used in the finding, then sample relevant edge cases. Some technical checks can be confirmed immediately, while search-engine processing and performance effects may require later observation. Keep those stages separate. A corrected canonical in rendered output does not prove reprocessing has occurred, and a traffic increase does not on its own prove which implementation caused it. Record the test date, environment, result and any remaining exception. If the check fails, reopen investigation rather than changing the acceptance condition to match the release. This discipline makes verification a continuation of the audit's evidence trail and protects teams from confusing shipped work with resolved conditions."
+    },
+    {
+      "eyebrow": "Follow-through",
+      "title": "Use the SEO audit as a dated decision record",
+      "body": "Preserve the report, source evidence, walkthrough decisions, implementation tickets and verification results together. Websites, priorities and teams change, so later readers need dates and context. Mark findings as accepted, rejected, deferred, superseded or verified, and record a short reason for decisions that differ from the original recommendation. This creates a useful baseline for future monitoring or a retainer without pretending the report remains permanently current. Review deferred high-impact findings when their dependency changes, not merely on an arbitrary schedule. Remove completed items from the active backlog only after the relevant check passes. When new evidence contradicts the report, update the decision record rather than defending an old conclusion. Reading an audit is therefore not a single meeting. It is a controlled process that carries observations into actions and actions into checks while preserving enough context for the next person to understand what happened."
+    }
+  ],
+  "related": {
+    "eyebrow": "Related guidance",
+    "title": "Understand the engagement behind the report",
+    "ariaLabel": "Related SEO audit reading guidance"
+  },
+  "links": [
+    { "routeKey": "seoAudit", "label": "Review the fixed-price SEO audit" },
+    { "routeKey": "auditContents", "label": "See what an SEO audit should contain" },
+    { "routeKey": "auditVsRetainer", "label": "Compare an SEO audit with a retainer" },
+    { "routeKey": "method", "label": "Understand the evidence-led method" },
+    { "routeKey": "technicalSeo", "label": "Explore technical SEO support" }
+  ],
+  "cta": {
+    "eyebrow": "Evidence into action",
+    "title": "Book an audit designed to be read, challenged and checked"
+  }
+}

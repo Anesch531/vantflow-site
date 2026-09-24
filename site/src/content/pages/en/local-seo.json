@@ -2,16 +2,16 @@
   "heroEyebrow": "Local SEO",
   "problem": {
     "eyebrow": "The local constraint",
-    "title": "Local discovery depends on signals that must agree",
-    "body": "People need accurate business information at the moment they choose where to go or whom to contact. Inconsistent details, weak category context, and neglected profile signals make that decision harder to support."
+    "title": "Local SEO services depend on signals that agree",
+    "body": "Local SEO services help people find accurate business information when they choose where to go or whom to contact. Inconsistent details, weak category context, and neglected profile signals make that decision harder to support."
   },
   "method": {
     "eyebrow": "The local method",
-    "title": "Build a consistent local presence from the business outward",
+    "title": "Build local visibility from the Google Business Profile outward",
     "intro": "The focus stays on the business, its services, its customers, and the evidence that supports local relevance.",
     "steps": [
       { "number": "01", "title": "Business facts", "body": "Confirm the name, address, phone, hours, service details, and ownership information that customers and platforms should receive consistently." },
-      { "number": "02", "title": "Profile relevance", "body": "Review categories, services, descriptions, photos, and updates against what the business actually offers and what local customers need to know." },
+      { "number": "02", "title": "Google Business Profile relevance", "body": "Review Google Business Profile categories, services, descriptions, photos, and updates against what the business actually offers and what local customers need to know." },
       { "number": "03", "title": "Trust signals", "body": "Map reviews, responses, mentions, and local references into a process that supports accuracy without manufacturing endorsements or activity." },
       { "number": "04", "title": "Measure and maintain", "body": "Set a practical review cadence for changes, questions, profile health, and local visibility so improvements do not depend on one launch." }
     ]

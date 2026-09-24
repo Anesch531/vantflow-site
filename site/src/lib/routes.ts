@@ -5,12 +5,13 @@
  * Paths are English/unprefixed; locale variants are COMPUTED by i18n.localizePath(),
  * never stored. Slugs were reconciled and frozen in T18 (decision #39; map in `seo/keyword-map.md`) —
  * downstream code must reference routes by `key`, never by a literal path.
+ * Decision #45 unfroze path additions for Part 4.
  *
  * `/privacy/` and `/terms/` supersede decision #38 for these paths (decision #42).
  * `/blog/` is Phase 1b (decision #28): present in the table, disabled, no page emitted.
  */
 
-export type RouteGroup = 'top' | 'services' | 'industries' | 'legal' | 'system';
+export type RouteGroup = 'top' | 'services' | 'industries' | 'legal' | 'system' | 'guides';
 
 import type { UiKey } from './ui/en';
 
@@ -48,6 +49,21 @@ export const routes = {
 
   dubaiProperty: r('dubaiProperty', '/for/dubai-property/', 'industries', 'T06'),
   algerianEcommerce: r('algerianEcommerce', '/for/algerian-ecommerce/', 'industries', 'T06'),
+
+  method: r('method', '/method/', 'guides', 'T25'),
+  evidenceLedSeo: r('evidenceLedSeo', '/method/evidence-led-seo/', 'guides', 'T25'),
+  verifySeoFix: r('verifySeoFix', '/guides/how-to-verify-an-seo-fix/', 'guides', 'T25'),
+  evidenceVsOpinion: r('evidenceVsOpinion', '/guides/evidence-vs-opinion-seo-reporting/', 'guides', 'T25'),
+  chooseWhiteLabel: r('chooseWhiteLabel', '/guides/choose-white-label-seo-provider/', 'guides', 'T26'),
+  whiteLabelPricing: r('whiteLabelPricing', '/guides/white-label-seo-pricing/', 'guides', 'T26'),
+  whiteLabelVsInHouse: r('whiteLabelVsInHouse', '/guides/white-label-vs-in-house-seo/', 'guides', 'T26'),
+  whiteLabelReporting: r('whiteLabelReporting', '/guides/white-label-seo-reporting/', 'guides', 'T26'),
+  briefWhiteLabel: r('briefWhiteLabel', '/guides/brief-white-label-seo-partner/', 'guides', 'T26'),
+  auditContents: r('auditContents', '/guides/fixed-price-seo-audit-contents/', 'guides', 'T27'),
+  auditVsRetainer: r('auditVsRetainer', '/guides/seo-audit-vs-retainer/', 'guides', 'T27'),
+  readSeoAudit: r('readSeoAudit', '/guides/how-to-read-an-seo-audit/', 'guides', 'T27'),
+  ecommerceSeoAlgeria: r('ecommerceSeoAlgeria', '/guides/ecommerce-seo-checklist-algeria/', 'guides', 'T28'),
+  ecommercePlatformAlgeria: r('ecommercePlatformAlgeria', '/guides/ecommerce-platform-seo-algeria/', 'guides', 'T28'),
 
   seoAudit: r('seoAudit', '/seo-audit/', 'top', 'T09'),
   work: r('work', '/work/', 'top', 'T07'),

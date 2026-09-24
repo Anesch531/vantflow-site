@@ -2,13 +2,13 @@
   "heroEyebrow": "White-label SEO",
   "problem": {
     "eyebrow": "The agency constraint",
-    "title": "Deliver SEO under your brand without losing the thread",
-    "body": "Reselling SEO creates practical questions: who invoices the end client, whose brand appears on the report, what your team receives, and where responsibility changes hands. A useful partner process answers those questions before work reaches the client."
+    "title": "White-label SEO for agencies without lost context",
+    "body": "White-label SEO for agencies creates practical questions: who invoices the end client, whose brand appears on the report, what your team receives, and where responsibility changes hands. A useful partner process answers those questions before work reaches the client."
   },
   "method": {
     "eyebrow": "The delivery method",
-    "title": "A handoff your team can inspect",
-    "intro": "Work starts with an agreed scope and stays legible through each review point.",
+    "title": "A white-label SEO handoff your agency can inspect",
+    "intro": "White-label SEO work starts with an agreed scope and stays legible through each review point.",
     "steps": [
       { "number": "01", "title": "Scope", "body": "Define the site, priorities, audience, deliverables, and approval owner before research or recommendations begin." },
       { "number": "02", "title": "Evidence", "body": "Tie findings to pages, searches, crawls, or business constraints so your team can challenge or approve the reasoning." },
@@ -18,7 +18,7 @@
   },
   "outcome": {
     "eyebrow": "What this gives your agency",
-    "title": "A delivery system built around your client relationship",
+    "title": "White-label SEO delivery built around your agency",
     "body": "Your agency remains the commercial owner of the relationship. The invoice path, report brand, access, approvals, and handoffs are agreed as part of the scope rather than left implicit. Partner terms are discussed directly; no public rate is assumed.",
     "points": [
       "Reports prepared for the agreed client-facing brand",
@@ -27,6 +27,14 @@
       "Process proof that can be reviewed without invented performance claims"
     ]
   },
+  "sections": [
+    {"eyebrow":"Agency delivery","title":"White-label SEO for agencies that need accountable capacity","body":"White-label SEO for agencies should increase delivery capacity without weakening control of strategy or communication. That requires more than sending tasks to an external practitioner. The agency needs a named owner for scope, approvals and the client narrative, while the delivery partner needs enough context to make useful decisions. Start by identifying the commercial objective, pages or market involved, client constraints and work already completed. Agree which outputs are internal working documents and which may be presented directly. A dependable partner records evidence, assumptions and exclusions so the agency can inspect the logic before attaching its brand. The same discipline applies when work is urgent: narrow the question rather than skipping context. Capacity becomes valuable when material moves through existing account, editorial and development processes. If every recommendation needs to be rediscovered or rewritten, outsourcing has shifted labour rather than removed it. A strong arrangement optimises for understandable handoffs, proportionate access and reviewable decisions, not merely the number of documents delivered."},
+    {"eyebrow":"Outsourcing model","title":"White-label SEO outsourcing without surrendering client ownership","body":"White-label SEO outsourcing works when responsibilities are explicit at commercial and operational boundaries. The agency normally owns the contract, pricing, relationship and final approval. The partner owns the agreed research and delivery standard, flags missing information and avoids communicating outside the approved route. Decide whether questions pass through an account lead, whether meetings are agency-only or client-facing, and whose name appears in files and notifications. Define where evidence lives, who may access analytics or the CMS, and how access will be removed. Separate advice from implementation. A partner may identify a template defect, prepare a ticket, make the change, or verify somebody else’s release; these are different responsibilities. Recording that distinction prevents a recommendation from being mistaken for a completed fix. It also protects the agency from promises made before feasibility is known. Outsourcing should not hide uncertainty. It should provide a controlled way to obtain specialist judgement, challenge it, approve it and carry it into the client relationship under agreed branding."},
+    {"eyebrow":"Selection","title":"How to choose a white-label SEO provider","body":"Choose a provider by examining how work is produced and reviewed, not by comparing broad service labels. Give shortlisted partners the same bounded scenario and ask what they need before beginning, what they would deliver, which assumptions they would mark and how they would verify implementation. Look for questions about the site, audience, market, platform, prior work and decision owner. Ask to see the structure of a finding: useful work connects an observation to an implication, action, owner and check. Review brand controls, confidentiality, access handling, conflict policy, capacity disclosure and escalation routes. Confirm who performs the work and who reviews it. A polished sample matters less if its claims cannot be traced or adapted safely. Test communication with a small representative scope before committing recurring client work. The test should expose the normal handoff, not an artificial sales exercise. Evaluate whether the result reduces decision load, survives scrutiny and fits how account managers, writers and developers operate. Cheap nominal output becomes expensive when the agency must repair reasoning, formatting or expectations before presentation."},
+    {"eyebrow":"Commercial scope","title":"Pricing white-label SEO outsourcing responsibly","body":"Partner pricing should follow responsibility and uncertainty rather than a fabricated universal rate. Variables include the number and type of sites, markets and languages, access quality, research depth, implementation responsibility, turnaround, review rounds, meeting load, reporting format and cadence. A repeatable audit on a familiar platform differs from an investigation across a migration, several properties and incomplete data. Ask whether discovery, client-facing revisions, implementation checks and urgent requests are included. Clarify what triggers a new scope and how postponed work is handled. The agency should model its own account time, quality assurance, client communication and commercial risk before setting a resale price. Public VANTFLOW audit offers at $99 and $149 describe those bounded products; they are not standing partner rates or benchmarks for every white-label engagement. A sound quote states assumptions and exclusions beside deliverables. This gives the agency a defensible basis for its proposal and makes later changes easier to discuss. Price comparison becomes meaningful only after providers price materially similar responsibilities, access conditions and review expectations."},
+    {"eyebrow":"Reporting","title":"White-label SEO reporting that preserves evidence and your brand","body":"White-label SEO reporting should let the agency present a clear story without erasing evidence. Agree the audience first. An executive summary may focus on the decision, priority and next owner, while an internal appendix keeps affected URLs, observations, limitations and verification notes. Branding includes more than a logo: file names, document properties, links, notification emails, author labels and shared workspaces can expose the delivery chain. Review those details before client access. Reporting cadence should match decisions. A weekly status note can record completed work, blockers and approvals; a monthly review can connect search signals with released changes and business context. Avoid filling reports with metrics that do not affect a decision. Separate activity from outcome, label estimates or hypotheses honestly, and state relevant confounders rather than claiming unsupported causation. The agency should receive editable material when adaptation is expected, plus a stable source record so caveats cannot disappear accidentally. This creates a client-facing report that belongs to the agency while remaining defensible under questions."},
+    {"eyebrow":"Briefing","title":"Briefing a white-label SEO partner before work starts","body":"A useful brief gives the partner enough context to decide without burying the assignment in account history. Begin with the decision required: diagnose a loss, prioritise a backlog, prepare a content plan, review a release or define implementation. Name the site, market, language, audience and commercially important pages. Add known constraints such as platform limits, migration dates, legal review, developer availability or content approvals. Link to reliable source material and state available access. Describe previous work that could alter interpretation, including redirects, redesigns, tracking changes and campaigns. Define deliverables, format, brand treatment, audience, deadline, review owner and definition of done. List exclusions so adjacent opportunities do not silently expand the work. Ask the partner to return assumptions and unresolved questions before deep research. For recurring delivery, include a change log rather than rewriting the entire brief each cycle. A concise current brief is more useful than a long document nobody can verify. It creates the reference needed to assess whether work answered the original question and whether a discovery belongs in this scope or a later one."}
+  ],
   "faq": {
     "title": "Common questions about white-label delivery",
     "items": [
@@ -37,16 +45,16 @@
     ]
   },
   "links": [
-    { "label": "See all SEO services", "routeKey": "services" },
-    { "label": "Review technical SEO", "routeKey": "technicalSeo" },
-    { "label": "Review on-page SEO", "routeKey": "onPageSeo" },
-    { "label": "Start with an SEO audit", "routeKey": "seoAudit" },
-    { "label": "Review the work approach", "routeKey": "work" }
+    { "label": "How to choose a white-label SEO provider", "routeKey": "chooseWhiteLabel" },
+    { "label": "Understand white-label SEO pricing", "routeKey": "whiteLabelPricing" },
+    { "label": "Compare white-label vs in-house SEO", "routeKey": "whiteLabelVsInHouse" },
+    { "label": "Build white-label SEO reporting", "routeKey": "whiteLabelReporting" },
+    { "label": "Brief a white-label SEO partner", "routeKey": "briefWhiteLabel" }
   ],
   "related": {
-    "eyebrow": "Related routes",
-    "title": "Continue with the right scope",
-    "ariaLabel": "Related SEO routes"
+    "eyebrow": "Related guides",
+    "title": "Plan an accountable white-label partnership",
+    "ariaLabel": "Related white-label SEO guides"
   },
   "cta": {
     "eyebrow": "Next step",

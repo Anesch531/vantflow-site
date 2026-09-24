@@ -1,0 +1,51 @@
+{
+  "heroEyebrow": "Audit buying guide",
+  "sections": [
+    {
+      "eyebrow": "Scope",
+      "title": "Fixed price SEO audit contents begin with boundaries",
+      "body": "The opening pages should identify the site or property reviewed, the relevant market, the review date, the questions in scope and the access actually available. They should also name exclusions, assumptions and any limits caused by missing data. This is not administrative padding. A fixed price depends on a defined investigation, and readers need that boundary before interpreting the findings. Look for the audited hostnames, subdomains, environments, page types and evidence sources. If crawling was sampled or restricted, the method should be stated. If analytics or Search Console was unavailable, conclusions that depend on those sources should be qualified. A clear scope protects both sides: the buyer can see whether the agreed question was answered, while the auditor can avoid presenting an incomplete view as certainty. Without this section, even technically correct observations may be applied beyond the evidence that supports them."
+    },
+    {
+      "eyebrow": "Summary",
+      "title": "What does an SEO audit include in its summary?",
+      "body": "The executive summary should explain the material conditions, their consequences and the proposed order of work in language a decision-maker can use. It should not flatten the whole site into a percentage score. A useful summary distinguishes urgent risks from longer-term improvements, describes dependencies and makes uncertainty visible. It can group findings by theme, template or owner, but the groups must connect to the detailed evidence later in the report. Look for a small number of decisions rather than a compressed copy of every issue. A manager should understand what needs attention, why it matters now and what resources may be involved. A technical reader should be able to follow each summary statement to a finding. Good summaries also avoid forecasting results that the audit cannot guarantee. They frame expected effects as reasons for action, then reserve confirmation for the verification stage after implementation."
+    },
+    {
+      "eyebrow": "Evidence",
+      "title": "Require findings that can be reproduced",
+      "body": "Each finding should record what was observed, where it occurs and how the auditor established it. Evidence may include response behaviour, rendered markup, crawl relationships, indexation signals, internal linking patterns or first-party performance data. The form can vary; traceability should not. A developer needs enough detail to reproduce a condition without guessing which URL, template or environment was tested. A stakeholder needs enough context to understand whether one example represents an isolated page or a repeated pattern. The report should separate facts from interpretations and hypotheses. For example, an observed canonical conflict is evidence; the reason it was introduced may remain uncertain until the template or release history is inspected. This distinction prevents confident wording from outrunning the available data. It also makes review constructive: readers can challenge the interpretation while preserving the underlying observation and can request the next check where certainty is limited."
+    },
+    {
+      "eyebrow": "Priority",
+      "title": "Prioritised SEO audit findings need reasons",
+      "body": "Priority should be explained through likely impact, breadth, confidence, implementation effort, dependency and reversibility. Labels such as critical, high or low are useful only when the report defines what they mean. A finding affecting important templates may deserve earlier attention than a visually dramatic warning on one low-value URL. Likewise, a high-confidence indexing fault may come before a speculative content change even when both concern valuable pages. The report should expose these trade-offs rather than imply that a tool generated an objective order. Ideally, findings identify an owner or workstream and note prerequisites, such as analytics access, content approval or a template release. This turns priority into a sequence that a team can plan. It also allows the order to change responsibly when commercial context or engineering constraints differ from the assumptions available during the audit. Priority is a reasoned decision, not a severity colour."
+    },
+    {
+      "eyebrow": "Action",
+      "title": "Implementation guidance should define the desired state",
+      "body": "Recommendations should say what condition needs to change, why, where and what a satisfactory outcome looks like. They should provide enough technical or editorial context for the responsible team without pretending to know systems the auditor could not inspect. When several remedies are valid, the report can state the principle and constraints rather than forcing one implementation. Useful guidance identifies affected patterns, edge cases, dependencies and risks such as changing indexable URLs or navigation at scale. It should also distinguish correction from optional enhancement. That protects limited development time and reduces the chance that a broad rewrite is commissioned to solve a narrow fault. Buyers should be wary of advice that merely repeats a rule, such as improving metadata, without naming the pages, evidence or acceptance condition. An actionable audit enables a competent owner to write a ticket, estimate the work and ask focused questions before deployment."
+    },
+    {
+      "eyebrow": "Verification",
+      "title": "Every material fix needs a verification step",
+      "body": "Verification closes the reasoning loop. For each material action, the report should describe what to inspect after implementation, where to inspect it and what result would count as resolved. Some checks can happen immediately in a test environment, such as confirming response codes, directives or rendered links. Others depend on recrawling, reprocessing or sufficient first-party data and therefore need a later observation window without promising a guaranteed outcome. The check should match the claim: a released code change is not proof that search engines received the intended signal, while a ranking movement alone does not prove which change caused it. Record the baseline and the test date so later comparison remains meaningful. If a recommendation cannot yet be verified, name the missing dependency. These steps make the audit useful beyond delivery and give teams a disciplined way to distinguish completed work from confirmed correction."
+    }
+  ],
+  "related": {
+    "eyebrow": "Related guidance",
+    "title": "Choose, read and act on the audit",
+    "ariaLabel": "Related SEO audit guidance"
+  },
+  "links": [
+    { "routeKey": "seoAudit", "label": "Review the fixed-price SEO audit" },
+    { "routeKey": "auditVsRetainer", "label": "Compare an SEO audit with a retainer" },
+    { "routeKey": "readSeoAudit", "label": "Learn how to read an SEO audit" },
+    { "routeKey": "technicalSeo", "label": "See technical SEO services" },
+    { "routeKey": "method", "label": "Understand the evidence-led method" }
+  ],
+  "cta": {
+    "eyebrow": "Defined investigation",
+    "title": "Book an audit with evidence, priorities and checks"
+  }
+}

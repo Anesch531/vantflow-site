@@ -1,0 +1,51 @@
+{
+  "heroEyebrow": "Algerian store guide",
+  "sections": [
+    {
+      "eyebrow": "Architecture",
+      "title": "Ecommerce SEO checklist Algeria: map the catalogue first",
+      "body": "List the categories, subcategories, product families and filters that customers genuinely need. Important categories should be reachable through ordinary rendered links rather than only through search boxes or scripted controls. Check that each indexable page has one stable URL and that sorting, tracking and filter parameters do not create uncontrolled duplicates. Products should have a clear route back to their category, while discontinued items need a deliberate policy based on replacements, remaining demand and customer usefulness. Review canonical tags, robots directives, pagination behaviour and XML sitemap membership together; no single signal repairs a contradictory set. Test the mobile navigation in English, French and Arabic where those versions exist, because labels and direction can change how menus wrap or hide. The aim is not maximum indexation. It is a catalogue in which useful landing pages are discoverable, duplicate states are constrained and every indexable URL has a defined purpose."
+    },
+    {
+      "eyebrow": "Merchandising",
+      "title": "Check Algerian category and product page content",
+      "body": "Give every priority category a specific introduction that explains the products, selection criteria and relevant local constraints without repeating a generic paragraph across the catalogue. Product pages should use accurate names, specifications, availability language, price presentation and delivery information supplied by the business. Avoid copying manufacturer text when the store can add useful details such as sizing conventions, compatibility, warranty terms or what is included. Titles and headings should distinguish variants clearly, while images need meaningful alternative text that describes the product rather than stuffing keywords. Keep reviews, questions and stock notices honest and current; do not create social proof that customers did not provide. Where products differ only by colour or size, decide whether variants need separate URLs based on distinct usefulness, not platform defaults. Link complementary items when the relationship helps a buyer. The resulting page should support comparison and confident selection before it attempts persuasion."
+    },
+    {
+      "eyebrow": "Language",
+      "title": "Review Arabic-market SEO without assuming one search language",
+      "body": "Document which audiences each language version serves and which team owns its accuracy. Algerian customers may search with Arabic, French, English, transliterated words or mixed product terminology, but that reality does not justify inserting every variant into every heading. Use customer research, internal search data and first-party query evidence where available to choose natural wording. If equivalent pages exist in multiple languages, give each a stable URL, self-referencing canonical and reciprocal hreflang annotations that use valid language and regional codes. Confirm that Arabic pages render right to left, while product codes, numbers and mixed-language names remain readable. Navigation, filters, validation messages and order communication need the same language treatment as editorial copy. Do not publish thin machine translations merely to occupy another URL. A smaller set of maintained pages is safer than a large set that gives customers conflicting prices, delivery terms or product details."
+    },
+    {
+      "eyebrow": "Conversion",
+      "title": "Make COD and delivery information crawlable and clear",
+      "body": "Cash on delivery affects the questions customers ask before ordering, so explain the real process in visible page content. State eligible regions, delivery expectations, confirmation steps, fees, refusal or return conditions and any product exclusions only when the business has confirmed them. Do not hide essential terms inside an image, chat exchange or checkout step that search engines and early-stage customers cannot reach. Product and category pages can link to one maintained delivery and COD policy instead of carrying inconsistent copies. Review the order form on a keyboard and mobile device, use explicit labels, preserve entered information after recoverable errors and explain required fields. If an order is confirmed later by telephone or message, say so before submission. Avoid describing an enquiry as a completed purchase. Clear operating information supports trust and reduces ambiguity, but it must match fulfilment practice; SEO wording cannot compensate for an unreliable or undocumented process."
+    },
+    {
+      "eyebrow": "Technical",
+      "title": "Test structured data, speed and indexability",
+      "body": "Inspect rendered HTML rather than assuming a platform feature works. Product structured data should describe the visible product and use supported properties for genuine price, currency, availability and identifiers. Breadcrumb markup should follow the navigation shown to users. Validate representative templates, then compare the markup with page content after releases. Measure performance on realistic mobile conditions and prioritise heavy product images, layout shifts, blocking resources and interaction delays that affect the buying journey. Compress and size images appropriately, reserve their display space and avoid loading unnecessary widgets before the core content. Check status codes, canonicals, robots directives, internal links and sitemap entries across products, categories and language variants. JavaScript can enhance filtering or galleries, but essential names, descriptions, links and order information should remain present in rendered output. Record a baseline for each accepted fix so deployment can be checked against the intended state rather than against a generic score."
+    },
+    {
+      "eyebrow": "Measurement",
+      "title": "Verify the checklist with store evidence",
+      "body": "Turn accepted findings into a short register containing the affected pattern, evidence, owner, desired state and verification method. Technical releases can be checked with response inspection, rendered HTML and a controlled crawl. Content changes can be reviewed for accuracy, language quality and internal linking before publication. Search Console may later show whether Google discovered and processed relevant URLs, while correctly configured analytics may help the team understand landing-page and order behaviour. Neither source proves causation on its own, and ranking or revenue outcomes should not be promised. Review internal site-search terms and customer-service questions for recurring gaps, especially around delivery, COD, sizing and compatibility. Recheck samples after catalogue imports or platform updates because templates can regress. When the underlying issue is uncertain, label the action as an experiment with a defined observation. This keeps the checklist accountable: completion means the change shipped; resolution means the intended condition was independently confirmed."
+    }
+  ],
+  "related": {
+    "eyebrow": "Related guidance",
+    "title": "Connect the checklist to your market and platform",
+    "ariaLabel": "Related Algerian e-commerce SEO guidance"
+  },
+  "links": [
+    { "routeKey": "algerianEcommerce", "label": "Explore SEO for Algerian e-commerce" },
+    { "routeKey": "ecommercePlatformAlgeria", "label": "Choose an SEO-ready e-commerce platform" },
+    { "routeKey": "technicalSeo", "label": "Review technical SEO services" },
+    { "routeKey": "contentGeo", "label": "Review content SEO services" },
+    { "routeKey": "seoAudit", "label": "Book a fixed-price SEO audit" }
+  ],
+  "cta": {
+    "eyebrow": "Evidence before action",
+    "title": "Audit the store before changing the catalogue"
+  }
+}

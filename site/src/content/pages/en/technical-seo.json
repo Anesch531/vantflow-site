@@ -2,15 +2,15 @@
   "heroEyebrow": "Technical SEO",
   "problem": {
     "eyebrow": "The technical constraint",
-    "title": "Good pages cannot perform when systems hide or distort them",
-    "body": "Search engines need stable access, clear indexation signals, dependable rendering, and usable performance. When those systems disagree, teams spend time treating symptoms while important pages remain hard to discover or interpret."
+    "title": "Technical SEO services for systems that hide or distort pages",
+    "body": "Technical SEO services begin with stable crawl access, clear indexation signals, dependable rendering, and usable performance. When those systems disagree, teams spend time treating symptoms while important pages remain hard to discover or interpret."
   },
   "method": {
     "eyebrow": "The technical method",
-    "title": "Prioritise fixes by evidence and dependency",
+    "title": "Prioritise crawl and indexation fixes by evidence",
     "intro": "The work turns technical findings into an implementation sequence that developers and site owners can inspect.",
     "steps": [
-      { "number": "01", "title": "Access and indexation", "body": "Review crawl paths, robots directives, status codes, canonicals, and sitemap signals around the pages the site needs search engines to find." },
+      { "number": "01", "title": "Crawl access and indexation", "body": "Review crawl paths, robots directives, status codes, canonicals, and sitemap signals around the pages the site needs search engines to find." },
       { "number": "02", "title": "Architecture and links", "body": "Trace navigation, internal links, depth, redirects, and duplicate routes to expose weak discovery paths and conflicting destinations." },
       { "number": "03", "title": "Rendering and data", "body": "Check whether essential content and structured signals remain available when templates, scripts, and page states are processed." },
       { "number": "04", "title": "Site speed and verification", "body": "Identify performance constraints, assign practical fixes, then verify deployed changes against the original evidence rather than assuming implementation worked." }
