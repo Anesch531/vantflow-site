@@ -2,11 +2,11 @@
 locale: en
 route: work
 title: Work built from evidence, not promises
-description: 'A published, dated baseline self-audit of vantflow.tech: the full method behind evidence-led SEO, demonstrated transparently on a real working site.'
+description: 'A published teardown of VANTFLOW rebuild: three-URL crawl baseline, six-part SEO audit, shipped fixes, plus transparent owner actions still open.'
 canonical: ''
 alternates: []
 schemaType: 'WebPage'
 noindex: false
 ---
 
-This first case study is our own site: a bounded audit of the live pre-rebuild footprint, with every claim tied to the crawl evidence.
+This teardown is our own site: a three-URL pre-rebuild baseline, a 31-page static rebuild, and a six-part SEO audit published with its remaining owner actions.

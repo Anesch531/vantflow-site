@@ -104,7 +104,7 @@ if (!isExcluded) {
   const items = [{ name: t(locale, 'route.home'), item: new URL('/', siteUrl).href }];
   let current = '';
   parts.forEach((part) => {
-    current += `/${part}/`;
+    current = current ? `${current}${part}/` : `/${part}/`;
     const match = allRoutes.find((candidate) => candidate.path === current);
     const label = match ? t(locale, match.labelKey) : part.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
     items.push({ name: label, item: new URL(current, siteUrl).href });
