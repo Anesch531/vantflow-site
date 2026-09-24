@@ -17,7 +17,7 @@
       { "title": "Findings", "body": "Observed technical, on-page, content, or local-search issues with the evidence behind them." },
       { "title": "Prioritized fixes", "body": "Recommended actions ordered by relevance and dependency, not an unexplained score." },
       { "title": "A 45-minute walkthrough", "body": "A scheduled call where we go through the first three findings together, what they cost you, and what you can safely leave alone." },
-      { "title": "Verification steps", "body": "Checks that show whether each implemented fix produced the intended change." }
+      { "title": "Verification steps", "body": "Checks that show whether each implemented fix produced the intended change.", "links": [{ "phrase": "whether each implemented fix produced the intended change", "label": "verification checklist", "routeKey": "verifySeoFix" }] }
     ]
   },
   "process": {

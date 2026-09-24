@@ -7,6 +7,7 @@ import Button from '../components/Button.astro';
 import { primaryCta } from '../lib/cta';
 import { localizePath, t, type Locale } from '../lib/i18n';
 import { route, routeKeys, type RouteKey } from '../lib/routes';
+import { splitBodyLinks } from '../lib/linkify';
 import homeCopy from '../content/pages/en/home.json';
 
 const locale: Locale = 'en';
@@ -134,7 +135,9 @@ const { Content } = await render(entry);
           <li class="method-card">
             <span class="mono method-card__number">{step.number}</span>
             <h3>{step.title}</h3>
-            <p>{step.body}</p>
+            <p>{splitBodyLinks(step.body, step.links ?? [], locale).map((seg) =>
+              typeof seg === 'string' ? seg : <a href={seg.href}>{seg.text}</a>
+            )}</p>
           </li>
         ))}
       </ol>
@@ -215,7 +218,9 @@ const { Content } = await render(entry);
         <div class="section__heading partner__heading">
           <p class="eyebrow">{homeCopy.partner.eyebrow}</p>
           <h2 id="partner-title">{homeCopy.partner.title}</h2>
-          <p>{homeCopy.partner.body}</p>
+          <p>{splitBodyLinks(homeCopy.partner.body, homeCopy.partner.links ?? [], locale).map((seg) =>
+            typeof seg === 'string' ? seg : <a href={seg.href}>{seg.text}</a>
+          )}</p>
         </div>
         <div class="partner__details">
           <ul class="check-list">

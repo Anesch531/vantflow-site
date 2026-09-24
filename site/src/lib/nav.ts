@@ -52,12 +52,6 @@ export const primaryNav: readonly NavItem[] = [
 
 /** Footer columns — derived from the same route table. */
 export const footerNav: readonly NavSection[] = [
-  { labelKey: 'nav.group.services', index: route('services'), items: [...servicePages] },
-  { labelKey: 'nav.group.industries', items: [...routesInGroup('industries')] },
   { labelKey: 'nav.guides', items: [route('method'), route('evidenceLedSeo'), route('verifySeoFix'), route('evidenceVsOpinion'), route('chooseWhiteLabel'), route('whiteLabelPricing'), route('whiteLabelVsInHouse'), route('whiteLabelReporting'), route('briefWhiteLabel'), route('auditContents'), route('auditVsRetainer'), route('readSeoAudit'), route('ecommerceSeoAlgeria'), route('ecommercePlatformAlgeria')] },
-  {
-    labelKey: 'nav.primary',
-    items: [route('seoAudit'), route('work'), route('pricing'), route('about'), route('contact')],
-  },
   { labelKey: 'footer.legal', items: [...routesInGroup('legal')] },
 ];

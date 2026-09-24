@@ -11,7 +11,7 @@
     "intro": "White-label SEO work starts with an agreed scope and stays legible through each review point.",
     "steps": [
       { "number": "01", "title": "Scope", "body": "Define the site, priorities, audience, deliverables, and approval owner before research or recommendations begin." },
-      { "number": "02", "title": "Evidence", "body": "Tie findings to pages, searches, crawls, or business constraints so your team can challenge or approve the reasoning." },
+       { "number": "02", "title": "Evidence", "body": "Tie findings to pages, searches, crawls, or business constraints so your team can challenge or approve the reasoning.", "links": [{ "phrase": "challenge or approve the reasoning", "label": "evidence-led method", "routeKey": "method" }] },
       { "number": "03", "title": "Brand", "body": "Prepare client-facing material for the agreed agency brand and document what your team needs to present or adapt." },
       { "number": "04", "title": "Handoff", "body": "Separate strategy, content, design, and development actions so each owner knows the next review and verification step." }
     ]
@@ -20,6 +20,10 @@
     "eyebrow": "What this gives your agency",
     "title": "White-label SEO delivery built around your agency",
     "body": "Your agency remains the commercial owner of the relationship. The invoice path, report brand, access, approvals, and handoffs are agreed as part of the scope rather than left implicit. Partner terms are discussed directly; no public rate is assumed.",
+    "links": [
+      { "phrase": "access, approvals, and handoffs", "label": "how reporting stays reviewable", "routeKey": "whiteLabelReporting" },
+      { "phrase": "Partner terms", "label": "white-label SEO pricing guide", "routeKey": "whiteLabelPricing" }
+    ],
     "points": [
       "Reports prepared for the agreed client-facing brand",
       "Clear ownership for invoicing, approvals, and implementation",

@@ -6,6 +6,7 @@ import Button from '../../components/Button.astro';
 import { primaryCta } from '../../lib/cta';
 import { localizePath, t, type Locale } from '../../lib/i18n';
 import { route, routeKeys, type RouteKey } from '../../lib/routes';
+import { splitBodyLinks } from '../../lib/linkify';
 import copy from '../../content/pages/en/seo-audit.json';
 
 const locale: Locale = 'en';
@@ -28,7 +29,7 @@ const ctaHref = localizePath(primaryCta.route.path, locale);
 
 <BaseLayout locale={locale} title={entry.data.seoTitle ?? entry.data.title} description={entry.data.description} noindex={entry.data.noindex} schemaType={entry.data.schemaType} ogImage="/og-seo-audit.png" faqItems={copy.faq.items}>
   <section class="hero" aria-labelledby="audit-title"><Container><div class="hero__grid"><div><p class="eyebrow">{copy.heroEyebrow}</p><h1 id="audit-title">{entry.data.title}</h1><div class="prose hero__prose lead"><Content /></div></div><aside class="price" aria-label={copy.offer.priceAriaLabel}><p class="price__intro">{copy.offer.introPrice}</p><p class="price__anchor">{copy.offer.anchorLabel} <del>{copy.offer.anchorPrice}</del></p><p>{copy.offer.rateNote}</p><Button href={copy.offer.whatsAppHref} variant="primary">{copy.offer.action}</Button></aside></div></Container></section>
-  <section class="section" aria-labelledby="audit-included-title"><Container><div class="section__heading"><p class="eyebrow">{copy.included.eyebrow}</p><h2 id="audit-included-title">{copy.included.title}</h2><p>{copy.included.intro}</p></div><ul class="cards">{copy.included.items.map((item) => <li><h3>{item.title}</h3><p>{item.body}</p></li>)}</ul></Container></section>
+  <section class="section" aria-labelledby="audit-included-title"><Container><div class="section__heading"><p class="eyebrow">{copy.included.eyebrow}</p><h2 id="audit-included-title">{copy.included.title}</h2><p>{copy.included.intro}</p></div><ul class="cards">{copy.included.items.map((item) => <li><h3>{item.title}</h3><p>{splitBodyLinks(item.body, item.links ?? [], locale).map((seg) => typeof seg === 'string' ? seg : <a href={seg.href}>{seg.text}</a>)}</p></li>)}</ul></Container></section>
   <section class="section section--tinted" aria-labelledby="audit-process-title"><Container><div class="section__heading"><p class="eyebrow">{copy.process.eyebrow}</p><h2 id="audit-process-title">{copy.process.title}</h2><p>{copy.process.intro}</p></div><ol class="steps">{copy.process.items.map((item) => <li><span class="mono">{item.number}</span><div><h3>{item.title}</h3><p>{item.body}</p></div></li>)}</ol></Container></section>
   <section class="section" aria-labelledby="audit-fit-title"><Container><div class="split"><div class="section__heading"><p class="eyebrow">{copy.fit.eyebrow}</p><h2 id="audit-fit-title">{copy.fit.title}</h2></div><div class="section__body"><p>{copy.fit.body}</p><ul>{copy.fit.items.map((item) => <li>{item}</li>)}</ul></div></div></Container></section>
   <section class="section" aria-labelledby="audit-faq-title"><Container><div class="section__heading"><h2 id="audit-faq-title">{copy.faq.title}</h2></div>{copy.faq.items.map((item) => <article><h3>{item.question}</h3><p>{item.answer}</p></article>)}</Container></section>
